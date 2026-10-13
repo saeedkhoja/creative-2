@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sara — yuz ritual to‘plami</title>
+  <meta name="description" content="Sara box (2 xil guasha + yuz yog‘i) va umrbod ilova — 399 000 so‘m. Kuniga 10 daqiqa, uyda. Toshkentda yetkazish bepul. Natija bo‘lmasa, pul qaytariladi.">
+  <meta name="theme-color" content="#F6F3FA">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sara — −50%, faqat 30 kishi uchun">
+  <meta property="og:description" content="Sara box + umrbod ilova — 399 000 so‘m.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/keyin.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F6F3FA;
+      --paper: #FFFFFF;
+      --ink: #1B1724;
+      --mute: #77708A;
+      --line: rgba(27, 23, 36, 0.1);
+      --lav: #8C78CF;
+      --lav-2: #6B57AE;
+      --lav-soft: #E7E0F7;
+      --rose: #E2557A;
+      --tg: #2AABEE;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --serif: 'Fraunces', Georgia, serif;
+    }
+
+    html { -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15.5px; line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: calc(96px + env(safe-area-inset-bottom));
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    .wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 16px; }
+
+    /* Masthead */
+    .mast { display: flex; align-items: center; justify-content: space-between; padding: 16px 0 10px; border-bottom: 1px solid var(--ink); }
+    .logo { height: 28px; width: auto; }
+    .issue { font-size: 10.5px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); text-align: right; line-height: 1.4; }
+    .issue b { color: var(--ink); }
+
+    /* Hero */
+    .hero { position: relative; text-align: center; padding: 22px 0 10px; }
+    .kicker { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mute); }
+    .kicker::before, .kicker::after { content: ''; width: 22px; height: 1px; background: currentColor; opacity: 0.5; }
+    .big { margin-top: 8px; font-family: var(--serif); font-weight: 400; font-style: italic; font-size: clamp(120px, 40vw, 172px); line-height: 0.82; letter-spacing: -0.05em; font-variation-settings: 'opsz' 144; background: linear-gradient(170deg, #B9A9EE 10%, var(--lav-2) 80%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .big sup { font-size: 0.42em; vertical-align: 0.95em; letter-spacing: 0; margin-left: 4px; }
+    .hero-sub { margin-top: 8px; font-family: var(--serif); font-size: 22px; line-height: 1.2; }
+    .hero-sub i { color: var(--lav-2); }
+
+    /* Polaroids */
+    .photos { position: relative; height: 392px; margin-top: 22px; }
+    .pol { position: absolute; top: 0; width: 64%; padding: 8px 8px 0; border-radius: 6px; background: var(--paper); box-shadow: 0 24px 50px rgba(52, 38, 92, 0.16), 0 2px 6px rgba(52, 38, 92, 0.06); }
+    .pol img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
+    .pol figcaption { display: flex; justify-content: space-between; align-items: center; padding: 10px 4px 12px; font-family: var(--serif); font-style: italic; font-size: 18px; }
+    .pol figcaption small { font-family: 'Inter', sans-serif; font-style: normal; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); }
+    .pol.a { left: 0; transform: rotate(-5deg); }
+    .pol.b { right: 0; top: 34px; transform: rotate(4deg); }
+    .pol.b figcaption { color: var(--lav-2); }
+    .js .pol.a { transform: rotate(-2deg) translateX(30px); opacity: 0; transition: transform 1s var(--ease), opacity 0.6s; }
+    .js .pol.b { transform: rotate(1deg) translateX(-30px); opacity: 0; transition: transform 1s var(--ease) 0.15s, opacity 0.6s 0.15s; }
+    .js .photos.in .pol.a { transform: rotate(-5deg); opacity: 1; }
+    .js .photos.in .pol.b { transform: rotate(4deg); opacity: 1; }
+    .pol-arrow { position: absolute; z-index: 2; left: 50%; top: 46%; width: 54px; height: 54px; margin-left: -27px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: var(--ink); box-shadow: 0 10px 26px rgba(27, 23, 36, 0.3); }
+    .pol-arrow svg { animation: nudge 1.8s ease-in-out infinite; }
+    .note { text-align: center; font-size: 11.5px; color: var(--mute); }
+
+    /* Contents */
+    .toc { margin-top: 34px; padding: 18px 18px 8px; border-radius: 4px; background: var(--paper); box-shadow: 0 1px 0 var(--line), 0 18px 40px rgba(52, 38, 92, 0.08); }
+    .toc-h { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid var(--ink); }
+    .toc-h b { font-family: var(--serif); font-weight: 600; font-size: 22px; }
+    .toc-h span { font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); }
+    .toc ol { list-style: none; }
+    .toc a { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); -webkit-tap-highlight-color: transparent; }
+    .toc li:last-child a { border-bottom: 0; }
+    .toc .n { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--lav-2); width: 22px; }
+    .toc .t { font-family: var(--serif); font-size: 18px; }
+    .toc .dots { flex: 1; border-bottom: 1px dotted rgba(27, 23, 36, 0.35); transform: translateY(-4px); }
+    .toc .p { font-size: 12px; font-weight: 600; color: var(--mute); }
+    .toc a:active .t { color: var(--lav-2); }
+
+    /* Sections */
+    .sec { margin-top: 52px; scroll-margin-top: 16px; }
+    .sec-k { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid var(--ink); font-size: 10.5px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); }
+    .sec-k b { color: var(--ink); }
+    .sec h2 { margin-top: 14px; font-family: var(--serif); font-weight: 400; font-size: 36px; line-height: 1.02; letter-spacing: -0.02em; }
+    .sec h2 i { color: var(--lav-2); }
+    .intro { margin-top: 12px; font-size: 15.5px; color: #4A4458; }
+    .intro::first-letter { float: left; font-family: var(--serif); font-size: 58px; line-height: 0.82; padding: 6px 8px 0 0; color: var(--lav-2); }
+
+    /* Causes */
+    .causes { list-style: none; display: grid; grid-template-columns: 1fr 1fr; margin-top: 18px; border-top: 1px solid var(--line); }
+    .causes li { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--line); }
+    .causes li:nth-child(odd) { border-right: 1px solid var(--line); }
+    .causes li:nth-child(even) { padding-left: 14px; padding-right: 0; }
+    .causes .n { font-family: var(--serif); font-style: italic; font-size: 34px; line-height: 1; color: var(--lav); }
+    .causes b { display: block; margin-top: 8px; font-size: 15px; line-height: 1.25; }
+    .causes p { margin-top: 4px; font-size: 13px; line-height: 1.45; color: var(--mute); }
+
+    .quote { margin: 44px 0 0; padding: 26px 8px; text-align: center; border-block: 1px solid var(--ink); }
+    .quote p { font-family: var(--serif); font-style: italic; font-size: 27px; line-height: 1.2; }
+    .quote p::before { content: '“'; display: block; font-size: 64px; line-height: 0.6; color: var(--lav); }
+    .quote cite { display: block; margin-top: 12px; font-style: normal; font-size: 10.5px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--mute); }
+
+    /* Ritual */
+    .tbar { display: grid; grid-template-columns: 1fr 4fr 5fr; gap: 3px; margin-top: 18px; height: 34px; }
+    .tbar span { position: relative; border-radius: 6px; display: grid; place-items: center; font-size: 11.5px; font-weight: 700; color: #fff; background: var(--lav); }
+    .tbar span:nth-child(2) { background: var(--lav-2); }
+    .tbar span:nth-child(3) { background: var(--ink); }
+    .tbar-l { display: flex; justify-content: space-between; margin-top: 6px; font-size: 11px; color: var(--mute); }
+    .rail { display: grid; grid-auto-flow: column; grid-auto-columns: 70%; gap: 10px; margin: 14px -16px 0; padding: 0 16px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 16px; scrollbar-width: none; }
+    .rail::-webkit-scrollbar { display: none; }
+    .step { scroll-snap-align: start; position: relative; padding: 16px 16px 18px; border-radius: 22px; background: var(--paper); border: 1px solid var(--line); }
+    .step-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .step .n { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--mute); }
+    .step .m { font-family: var(--serif); font-size: 28px; line-height: 1; }
+    .step .m small { font-size: 13px; color: var(--mute); }
+    .orb { width: 62px; height: 62px; margin: 12px 0 14px; border-radius: 50%; display: grid; place-items: center; color: var(--lav-2); background: radial-gradient(circle at 30% 25%, #fff, var(--lav-soft) 70%); box-shadow: inset 0 -6px 14px rgba(107, 87, 174, 0.12), 0 10px 22px rgba(107, 87, 174, 0.14); }
+    .step b { display: block; font-size: 16px; line-height: 1.25; }
+    .step p { margin-top: 4px; font-size: 13.5px; line-height: 1.45; color: var(--mute); }
+    .step.dark { background: var(--ink); color: #fff; border-color: transparent; }
+    .step.dark .n, .step.dark p, .step.dark .m small { color: rgba(255, 255, 255, 0.6); }
+    .step.dark .orb { color: #fff; background: radial-gradient(circle at 30% 25%, #A996E6, var(--lav-2) 75%); box-shadow: 0 10px 22px rgba(107, 87, 174, 0.4); }
+    .swipe-h { margin-top: 8px; font-size: 11.5px; color: var(--mute); text-align: right; }
+
+    /* Calendar */
+    .weeks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 18px; padding: 4px; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); }
+    .weeks button { padding: 9px 4px; border: 0; border-radius: 10px; background: transparent; font: 600 12.5px/1 'Inter', sans-serif; color: var(--mute); cursor: pointer; transition: 0.3s; -webkit-tap-highlight-color: transparent; }
+    .weeks button[aria-pressed='true'] { background: var(--ink); color: #fff; }
+    .weeks button:focus-visible { outline: 2px solid var(--lav); outline-offset: 2px; }
+    .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-top: 12px; }
+    .cal i { position: relative; aspect-ratio: 1; border-radius: 10px; display: grid; place-items: center; font-style: normal; font-size: 12px; font-weight: 600; color: var(--mute); background: var(--paper); border: 1px solid var(--line); transition: background 0.35s, color 0.35s, transform 0.35s var(--ease), opacity 0.35s; }
+    .cal i.f { color: #fff; border-color: transparent; }
+    .cal i.f[data-w='1'] { background: #C9BCF0; }
+    .cal i.f[data-w='2'] { background: #A996E6; }
+    .cal i.f[data-w='3'] { background: var(--lav-2); }
+    .cal i.f[data-w='4'] { background: var(--ink); }
+    .cal i.x { background: var(--rose); color: #fff; }
+    .cal.sel i:not(.on) { opacity: 0.3; }
+    .cal i.on { transform: scale(1.06); }
+    .week-txt { margin-top: 14px; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 18px; background: var(--paper); border: 1px solid var(--line); min-height: 86px; }
+    .week-txt .wn { font-family: var(--serif); font-size: 44px; line-height: 1; color: var(--lav-2); }
+    .week-txt b { display: block; font-size: 15.5px; }
+    .week-txt p { font-size: 13.5px; color: var(--mute); line-height: 1.45; }
+
+    /* Box index */
+    .idx { margin-top: 18px; list-style: none; }
+    .idx li { display: grid; grid-template-columns: 54px 1fr; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .idx li:first-child { border-top: 1px solid var(--line); }
+    .idx .orb { width: 54px; height: 54px; margin: 0; }
+    .idx .row { display: flex; align-items: baseline; gap: 8px; }
+    .idx .row b { font-family: var(--serif); font-weight: 600; font-size: 19px; }
+    .idx .row .dots { flex: 1; border-bottom: 1px dotted rgba(27, 23, 36, 0.35); transform: translateY(-4px); }
+    .idx .row span:last-child { font-size: 13px; font-weight: 700; color: var(--lav-2); }
+    .idx p { font-size: 13px; color: var(--mute); }
+
+    .appc { position: relative; display: grid; grid-template-columns: 1fr 122px; gap: 14px; margin-top: 16px; padding: 18px 14px 0 18px; border-radius: 26px; overflow: hidden; color: #fff; background: radial-gradient(90% 80% at 100% 0%, rgba(185, 169, 238, 0.55), transparent 60%), var(--ink); }
+    .appc h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.1; }
+    .appc h3 i { color: #C9BCF0; }
+    .appc ul { list-style: none; margin: 12px 0 18px; display: grid; gap: 7px; }
+    .appc li { display: flex; gap: 8px; font-size: 13.5px; line-height: 1.35; color: rgba(255, 255, 255, 0.85); }
+    .appc li::before { content: '✦'; flex: none; color: #C9BCF0; font-size: 11px; margin-top: 2px; }
+    .ph { align-self: end; height: 212px; padding: 7px 6px 0; border-radius: 24px 24px 0 0; background: #fff; }
+    .ph-s { height: 100%; border-radius: 18px 18px 0 0; background: var(--bg); padding: 10px 8px 0; color: var(--ink); font-size: 9px; overflow: hidden; }
+    .ph-s .hd { display: flex; justify-content: space-between; font-weight: 700; font-size: 10px; }
+    .ph-s .ring { width: 70px; height: 70px; margin: 10px auto 8px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 18px; background: conic-gradient(var(--lav-2) 0 14%, var(--lav-soft) 14% 100%); position: relative; }
+    .ph-s .ring::before { content: ''; position: absolute; inset: 7px; border-radius: 50%; background: var(--bg); }
+    .ph-s .ring span { position: relative; }
+    .ph-s .li { display: flex; justify-content: space-between; margin-top: 5px; padding: 5px 6px; border-radius: 7px; background: #fff; font-weight: 600; }
+    .ph-s .li em { font-style: normal; color: var(--mute); }
+
+    /* Checklist */
+    .chk { list-style: none; margin-top: 16px; display: grid; gap: 6px; }
+    .chk label { display: flex; align-items: center; gap: 12px; padding: 13px 14px; border-radius: 16px; background: var(--paper); border: 1px solid var(--line); cursor: pointer; font-size: 14.5px; transition: border-color 0.25s, background 0.25s; -webkit-tap-highlight-color: transparent; }
+    .chk input { position: absolute; opacity: 0; pointer-events: none; }
+    .chk .box { flex: none; width: 24px; height: 24px; border-radius: 8px; border: 1.5px solid rgba(27, 23, 36, 0.25); display: grid; place-items: center; transition: 0.25s var(--ease); }
+    .chk .box svg { opacity: 0; transform: scale(0.5); transition: 0.25s var(--ease); }
+    .chk input:checked + .box { background: var(--lav-2); border-color: var(--lav-2); }
+    .chk input:checked + .box svg { opacity: 1; transform: none; }
+    .chk input:checked ~ span:last-child { font-weight: 600; }
+    .chk label:has(input:checked) { border-color: rgba(107, 87, 174, 0.45); background: #FBFAFF; }
+    .chk input:focus-visible + .box { outline: 2px solid var(--lav); outline-offset: 2px; }
+    .verdict { margin-top: 10px; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--lav-soft); font-size: 14px; transition: background 0.3s; }
+    .verdict .score { flex: none; font-family: var(--serif); font-size: 26px; line-height: 1; color: var(--lav-2); min-width: 44px; }
+    .verdict.ok { background: var(--ink); color: #fff; }
+    .verdict.ok .score { color: #C9BCF0; }
+
+    /* Compare */
+    .ctab { width: 100%; margin-top: 18px; border-collapse: collapse; font-size: 14px; }
+    .ctab th, .ctab td { padding: 12px 6px; border-bottom: 1px solid var(--line); text-align: center; }
+    .ctab th:first-child, .ctab td:first-child { text-align: left; padding-left: 0; }
+    .ctab thead th { font-family: var(--serif); font-weight: 400; font-style: italic; font-size: 16px; border-bottom-color: var(--ink); }
+    .ctab .s { background: #FBFAFF; }
+    .ctab thead .s { font-weight: 600; font-style: normal; color: var(--lav-2); }
+    .ctab td.s { color: var(--lav-2); font-weight: 700; }
+    .ctab td:not(:first-child):not(.s) { color: rgba(27, 23, 36, 0.3); }
+
+    /* Ticket */
+    .ticket { position: relative; margin-top: 18px; border-radius: 28px; background: var(--paper); box-shadow: 0 30px 60px rgba(52, 38, 92, 0.12), 0 0 0 1px var(--line); }
+    .t-top { padding: 22px 20px 18px; }
+    .t-row { display: flex; align-items: center; justify-content: space-between; }
+    .t-name { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); }
+    .t-off { font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 99px; background: var(--ink); color: #fff; }
+    .t-price { display: flex; align-items: baseline; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .t-price .num { font-family: var(--serif); font-weight: 400; font-size: 58px; line-height: 1; letter-spacing: -0.03em; font-variation-settings: 'opsz' 144; }
+    .t-price .cur { font-size: 16px; font-weight: 600; color: var(--mute); }
+    .t-price s { width: 100%; font-size: 15px; color: var(--mute); text-decoration-color: var(--rose); text-decoration-thickness: 2px; order: -1; }
+    .t-list { list-style: none; margin-top: 14px; display: grid; gap: 7px; }
+    .t-list li { display: flex; align-items: baseline; gap: 8px; font-size: 14px; }
+    .t-list .dots { flex: 1; border-bottom: 1px dotted rgba(27, 23, 36, 0.3); transform: translateY(-4px); }
+    .t-list li span:last-child { color: var(--mute); }
+    .t-list li.free span:last-child { color: #1E9E66; font-weight: 700; }
+    .perf { position: relative; height: 0; border-top: 2px dashed var(--line); margin: 0 18px; }
+    .perf::before, .perf::after { content: ''; position: absolute; top: -13px; width: 24px; height: 24px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); }
+    .perf::before { left: -31px; }
+    .perf::after { right: -31px; }
+    .t-bot { padding: 18px 20px 20px; }
+    .seats-h { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: var(--mute); }
+    .seats-h b { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--ink); }
+    .seats { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-top: 12px; }
+    .seats i { aspect-ratio: 1; border-radius: 50%; background: var(--lav-soft); transition: background 0.4s, transform 0.4s var(--ease); transform: scale(0.6); }
+    .seats i.on { background: var(--ink); }
+    .seats.in i { transform: scale(1); }
+
+    .cta { position: relative; overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: 18px; padding: 9px 9px 9px 22px; border-radius: 999px; font-weight: 600; font-size: 16px; color: #fff; background: var(--ink); box-shadow: 0 16px 34px rgba(27, 23, 36, 0.25); transition: transform 0.15s ease; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .cta::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; width: 35%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent); animation: shine 3.4s ease-in-out infinite; }
+    .cta:active { transform: scale(0.98); }
+    .cta:focus-visible { outline: 3px solid var(--lav); outline-offset: 3px; }
+    .cta .tgi { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--tg); animation: ring 2.2s var(--ease) infinite; }
+    .cta.busy { opacity: 0.85; pointer-events: none; }
+    .cta-sub { margin-top: 10px; text-align: center; font-size: 12.5px; color: var(--mute); }
+
+    /* Guarantee */
+    .guar { display: flex; align-items: center; gap: 18px; margin-top: 26px; padding: 0 4px; }
+    .seal { position: relative; flex: none; width: 104px; height: 104px; }
+    .seal svg { position: absolute; inset: 0; animation: spin 22s linear infinite; }
+    .seal b { position: absolute; inset: 22px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 22px; color: #fff; background: radial-gradient(circle at 30% 25%, #A996E6, var(--lav-2)); box-shadow: 0 10px 24px rgba(107, 87, 174, 0.35); }
+    .guar h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 1.15; }
+    .guar p { margin-top: 4px; font-size: 13.5px; color: var(--mute); }
+
+    /* Receipt */
+    .receipt { position: relative; margin-top: 18px; padding: 22px 20px 26px; background: var(--paper); box-shadow: 0 18px 40px rgba(52, 38, 92, 0.1); }
+    .receipt::after { content: ''; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: linear-gradient(-45deg, transparent 6px, var(--paper) 0) 0 0 / 14px 10px repeat-x, linear-gradient(45deg, transparent 6px, var(--paper) 0) 0 0 / 14px 10px repeat-x; }
+    .rc-h { text-align: center; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+    .rc-h b { font-family: var(--serif); font-size: 20px; }
+    .rc-h small { display: block; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); }
+    .rc { list-style: none; counter-reset: r; }
+    .rc li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+    .rc li:last-child { border-bottom: 0; }
+    .rc li::before { counter-increment: r; content: counter(r); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 17px; color: #fff; background: var(--ink); }
+    .rc b { display: block; font-size: 15px; }
+    .rc p { font-size: 13px; color: var(--mute); }
+
+    /* FAQ */
+    .faq { margin-top: 14px; }
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq summary { list-style: none; display: grid; grid-template-columns: 40px 1fr 24px; align-items: baseline; gap: 6px; padding: 16px 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .q { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--lav-2); }
+    .faq summary .t { font-family: var(--serif); font-size: 18px; line-height: 1.25; }
+    .faq summary::after { content: '+'; font-family: var(--serif); font-size: 24px; line-height: 1; color: var(--lav-2); transition: transform 0.35s var(--ease); justify-self: end; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq p { padding: 0 0 16px 46px; font-size: 14px; color: #4A4458; }
+
+    .final { margin-top: 48px; text-align: center; padding: 30px 18px 22px; border-radius: 28px; background: var(--paper); border: 1px solid var(--line); }
+    .final h2 { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.02; }
+    .final h2 i { color: var(--lav-2); }
+    .final p { margin-top: 8px; font-size: 14.5px; color: var(--mute); }
+
+    footer { margin-top: 34px; padding-top: 14px; border-top: 1px solid var(--ink); display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute); }
+
+    /* Sticky */
+    .dock { position: fixed; z-index: 50; left: 50%; bottom: calc(12px + env(safe-area-inset-bottom)); width: calc(100% - 24px); max-width: 456px; transform: translate(-50%, 140%); visibility: hidden; transition: transform 0.45s var(--ease), visibility 0.45s; }
+    .dock.show { transform: translate(-50%, 0); visibility: visible; }
+    .dock .cta { margin: 0; box-shadow: 0 18px 40px rgba(27, 23, 36, 0.35); }
+    .dock .cta .lbl { line-height: 1.2; }
+    .dock .cta .lbl small { display: block; font-size: 12px; font-weight: 500; color: rgba(255, 255, 255, 0.6); }
+
+    .js .rv { opacity: 0; transform: translateY(22px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); transition-delay: var(--d, 0s); }
+    .js .rv.in { opacity: 1; transform: none; }
+
+    @keyframes nudge { 0%, 100% { transform: translateX(-2px); } 50% { transform: translateX(3px); } }
+    @keyframes shine { 0% { transform: translateX(-120%) skewX(-18deg); } 55%, 100% { transform: translateX(320%) skewX(-18deg); } }
+    @keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(42, 171, 238, 0.55); } 70%, 100% { box-shadow: 0 0 0 12px rgba(42, 171, 238, 0); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+      .js .rv, .js .pol.a, .js .pol.b { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mast wrap">
+    <img class="logo" src="assets/sara-logo.png" alt="Sara" width="101" height="38">
+    <span class="issue">Ritual soni <b>№28</b><br>Maxsus nashr</span>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="kicker rv">Chegirma · 30 kishi</p>
+      <div class="big rv" style="--d:.08s" aria-label="50 foiz chegirma">50<sup>%</sup></div>
+      <p class="hero-sub rv" style="--d:.16s">Baqbaqa uchun <i>28 kunlik ritual</i></p>
+    </section>
+
+    <section aria-label="Oldin va keyin">
+      <div class="photos" data-watch>
+        <figure class="pol a"><img src="assets/oldin.jpg" alt="Saraaa’dan oldin: baqbaqa ko‘rinadi" width="640" height="640"><figcaption>Oldin <small>1-kun</small></figcaption></figure>
+        <figure class="pol b"><img src="assets/keyin.jpg" alt="Saraaa’dan keyin: jag‘ chizig‘i aniqroq" width="640" height="640"><figcaption>Keyin <small>28-kun</small></figcaption></figure>
+        <span class="pol-arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      <p class="note">Natija har kimda turlicha</p>
+    </section>
+
+    <nav class="toc rv" aria-label="Mundarija">
+      <div class="toc-h"><b>Mundarija</b><span>Bu sonda</span></div>
+      <ol>
+        <li><a href="#sabab"><span class="n">i.</span><span class="t">Baqbaqa sabablari</span><span class="dots"></span><span class="p">04</span></a></li>
+        <li><a href="#ritual"><span class="n">ii.</span><span class="t">10 daqiqalik ritual</span><span class="dots"></span><span class="p">06</span></a></li>
+        <li><a href="#kalendar"><span class="n">iii.</span><span class="t">28 kunlik kalendar</span><span class="dots"></span><span class="p">08</span></a></li>
+        <li><a href="#box"><span class="n">iv.</span><span class="t">Box va ilova</span><span class="dots"></span><span class="p">10</span></a></li>
+        <li><a href="#narx"><span class="n">v.</span><span class="t">Narx — 399 000</span><span class="dots"></span><span class="p">12</span></a></li>
+        <li><a href="#savol"><span class="n">vi.</span><span class="t">Savol-javob</span><span class="dots"></span><span class="p">14</span></a></li>
+      </ol>
+    </nav>
+
+    <!-- i. Sabablar -->
+    <section class="sec" id="sabab" aria-labelledby="h1s">
+      <div class="sec-k rv"><span><b>i.</b> Sabablar</span><span>04</span></div>
+      <h2 id="h1s" class="rv">Baqbaqa <i>qayerdan</i> keladi?</h2>
+      <p class="intro rv">Iyak osti og‘irlashishi faqat vazn bilan bog‘liq emas. Ko‘pincha bu bir nechta kundalik odatlarning yig‘indisi — va ularning aksariyatiga ta’sir qilsa bo‘ladi.</p>
+      <ol class="causes" data-stagger>
+        <li><span class="n">01</span><b>Telefonga egilish</b><p>Bo‘yin doim pastda — iyak osti mushaklari bo‘shashadi.</p></li>
+        <li><span class="n">02</span><b>Shish va suyuqlik</b><p>Yuzda limfa turib qolsa, iyak osti og‘irlashadi.</p></li>
+        <li><span class="n">03</span><b>Bo‘sh mushaklar</b><p>Jag‘ va bo‘yin ishlamasa, yuz chizig‘i yumshaydi.</p></li>
+        <li><span class="n">04</span><b>Yosh va vazn</b><p>Teri elastikligi kamayadi, yog‘ to‘planadi.</p></li>
+      </ol>
+    </section>
+
+    <blockquote class="quote rv">
+      <p>Kuniga 10 daqiqa — butun umrga qoladigan odat.</p>
+      <cite>Sara ritual falsafasi</cite>
+    </blockquote>
+
+    <!-- ii. Ritual -->
+    <section class="sec" id="ritual" aria-labelledby="h2s">
+      <div class="sec-k rv"><span><b>ii.</b> Ritual</span><span>06</span></div>
+      <h2 id="h2s" class="rv">Har kuni <i>10 daqiqa</i></h2>
+      <div class="rv">
+        <div class="tbar" aria-hidden="true"><span>1′</span><span>4′</span><span>5′</span></div>
+        <div class="tbar-l"><span>Yog‘</span><span>Guasha</span><span>Mashq</span></div>
+      </div>
+      <div class="rail" data-stagger>
+        <div class="step">
+          <div class="step-top"><span class="n">01</span><span class="m">1<small>′</small></span></div>
+          <div class="orb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6V4.5a2 2 0 0 1 4 0V6"/><rect x="9" y="6" width="6" height="3" rx="1"/><rect x="6.5" y="9" width="11" height="12.5" rx="3"/><path d="M12 13c-1 1.3-1.6 2.1-1.6 2.9a1.6 1.6 0 0 0 3.2 0c0-.8-.6-1.6-1.6-2.9z"/></svg></div>
+          <b>Yog‘ surting</b><p>Bir necha tomchi — yuz, iyak osti va bo‘yinga. Teri tayyor bo‘ladi.</p>
+        </div>
+        <div class="step">
+          <div class="step-top"><span class="n">02</span><span class="m">4<small>′</small></span></div>
+          <div class="orb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5C3 8.4 6.4 5 10.5 5h3C17.6 5 21 8.4 21 12.5c0 1.7-1.3 3-3 3-1.1 0-2.1-.6-2.6-1.6-.7-1.3-2-2.2-3.4-2.2s-2.7.9-3.4 2.2c-.5 1-1.5 1.6-2.6 1.6-1.7 0-3-1.3-3-3z"/></svg></div>
+          <b>Guasha massaji</b><p>Iyakdan quloqqa, bo‘yindan pastga — yumshoq bosim bilan.</p>
+        </div>
+        <div class="step dark">
+          <div class="step-top"><span class="n">03</span><span class="m">5<small>′</small></span></div>
+          <div class="orb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2.5"/><path d="M10.5 9l4 2-4 2z" fill="currentColor"/><path d="M8 21h8"/></svg></div>
+          <b>Video mashq</b><p>Ilovadagi kunlik darsni yoqing — jag‘ va bo‘yin uchun.</p>
+        </div>
+        <div class="step">
+          <div class="step-top"><span class="n">+</span><span class="m">7<small>-kun</small></span></div>
+          <div class="orb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8.5 6l1.5-2.5h4L15.5 6"/></svg></div>
+          <b>Haftalik surat</b><p>Har hafta bir xil burchakdan surat — o‘zgarishni ko‘rasiz.</p>
+        </div>
+      </div>
+      <p class="swipe-h">Suring →</p>
+    </section>
+
+    <!-- iii. Kalendar -->
+    <section class="sec" id="kalendar" aria-labelledby="h3s">
+      <div class="sec-k rv"><span><b>iii.</b> Kalendar</span><span>08</span></div>
+      <h2 id="h3s" class="rv">28 kun, <i>4 hafta</i></h2>
+      <div class="weeks rv" role="group" aria-label="Haftani tanlash">
+        <button type="button" data-w="1" aria-pressed="true">1-hafta</button>
+        <button type="button" data-w="2" aria-pressed="false">2-hafta</button>
+        <button type="button" data-w="3" aria-pressed="false">3-hafta</button>
+        <button type="button" data-w="4" aria-pressed="false">4-hafta</button>
+      </div>
+      <div class="cal rv" id="cal" aria-hidden="true"></div>
+      <div class="week-txt rv" aria-live="polite"><span class="wn" id="wn">1</span><div><b id="wt"></b><p id="wd"></p></div></div>
+    </section>
+
+    <!-- iv. Box -->
+    <section class="sec" id="box" aria-labelledby="h4s">
+      <div class="sec-k rv"><span><b>iv.</b> Box va ilova</span><span>10</span></div>
+      <h2 id="h4s" class="rv">Qutida <i>nima bor</i>?</h2>
+      <ul class="idx" data-stagger>
+        <li>
+          <span class="orb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5C3 8.4 6.4 5 10.5 5h3C17.6 5 21 8.4 21 12.5c0 1.7-1.3 3-3 3-1.1 0-2.1-.6-2.6-1.6-.7-1.3-2-2.2-3.4-2.2s-2.7.9-3.4 2.2c-.5 1-1.5 1.6-2.6 1.6-1.7 0-3-1.3-3-3z"/></svg></span>
+          <div><div class="row"><b>Guasha</b><span class="dots"></span><span>×2</span></div><p>2 xil shakl — yuz va bo‘yin uchun</p></div>
+        </li>
+        <li>
+          <span class="orb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6V4.5a2 2 0 0 1 4 0V6"/><rect x="9" y="6" width="6" height="3" rx="1"/><rect x="6.5" y="9" width="11" height="12.5" rx="3"/><path d="M12 13c-1 1.3-1.6 2.1-1.6 2.9a1.6 1.6 0 0 0 3.2 0c0-.8-.6-1.6-1.6-2.9z"/></svg></span>
+          <div><div class="row"><b>Yuz yog‘i</b><span class="dots"></span><span>×1</span></div><p>Massajda teri silliq sirpanadi</p></div>
+        </li>
+        <li>
+          <span class="orb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg></span>
+          <div><div class="row"><b>Sara ilovasi</b><span class="dots"></span><span>∞</span></div><p>Umrbod kirish, telefoningizda</p></div>
+        </li>
+        <li>
+          <span class="orb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v9H3z"/><path d="M14 10h3.6a1 1 0 0 1 .8.4l2.4 3.2a1 1 0 0 1 .2.6V16h-7"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></span>
+          <div><div class="row"><b>Yetkazish</b><span class="dots"></span><span>bepul</span></div><p>Toshkent bo‘ylab, eshigingizgacha</p></div>
+        </li>
+      </ul>
+
+      <div class="appc rv">
+        <div>
+          <h3>Ilova — <i>shaxsiy murabbiy</i></h3>
+          <ul>
+            <li>28 kunlik tayyor dastur</li>
+            <li>Har kun uchun 10 daqiqalik video</li>
+            <li>Baqbaqaga qarshi mashqlar</li>
+            <li>Haftalik progress surati</li>
+            <li>Bir marta to‘lov — umrbod</li>
+          </ul>
+        </div>
+        <div class="ph" aria-hidden="true">
+          <div class="ph-s">
+            <div class="hd"><span>Sara</span><span>4/28</span></div>
+            <div class="ring"><span>14%</span></div>
+            <div class="li">Yog‘<em>✓</em></div>
+            <div class="li">Guasha<em>✓</em></div>
+            <div class="li">Mashq<em>5′</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Checklist -->
+    <section class="sec" aria-labelledby="h5s">
+      <div class="sec-k rv"><span><b>✦</b> Test</span><span>11</span></div>
+      <h2 id="h5s" class="rv">Bu <i>siz</i> uchunmi?</h2>
+      <ul class="chk" id="chk" data-stagger>
+        <li><label><input type="checkbox"><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Iyak ostim og‘irlashgan</span></label></li>
+        <li><label><input type="checkbox"><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Jag‘ chizig‘im ko‘rinmay qolgan</span></label></li>
+        <li><label><input type="checkbox"><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Ertalab yuzim shishib turadi</span></label></li>
+        <li><label><input type="checkbox"><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Kuniga 3+ soat telefonga qarayman</span></label></li>
+        <li><label><input type="checkbox"><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>Salonga borishga vaqtim yo‘q</span></label></li>
+      </ul>
+      <div class="verdict rv" id="verdict" aria-live="polite"><span class="score" id="score">0/5</span><span id="vtext">Sizga mos keladiganlarini belgilang</span></div>
+    </section>
+
+    <!-- Compare -->
+    <section class="sec" aria-labelledby="h6s">
+      <div class="sec-k rv"><span><b>✦</b> Taqqoslash</span><span>11</span></div>
+      <h2 id="h6s" class="rv">Sara <i>yoki</i> salon?</h2>
+      <table class="ctab rv">
+        <thead><tr><th scope="col"><span class="sr">Xususiyat</span></th><th scope="col" class="s">Sara</th><th scope="col">Salon</th></tr></thead>
+        <tbody>
+          <tr><td>Qayerda</td><td class="s">Uyda</td><td>Salonda</td></tr>
+          <tr><td>Vaqt</td><td class="s">10 daq</td><td>1–2 soat</td></tr>
+          <tr><td>To‘lov</td><td class="s">Bir marta</td><td>Har safar</td></tr>
+          <tr><td>Dastur</td><td class="s">Umrbod</td><td>—</td></tr>
+          <tr><td>Kafolat</td><td class="s">100%</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- v. Narx -->
+    <section class="sec" id="narx" aria-labelledby="h7s">
+      <div class="sec-k rv"><span><b>v.</b> Narx</span><span>12</span></div>
+      <h2 id="h7s" class="rv">Maxsus <i>taklif</i></h2>
+      <div class="ticket rv">
+        <div class="t-top">
+          <div class="t-row"><span class="t-name">Box + ilova</span><span class="t-off">−50%</span></div>
+          <div class="t-price"><s>798 000 so‘m</s><span class="num">399 000</span><span class="cur">so‘m</span></div>
+          <ul class="t-list">
+            <li><span>2 xil guasha</span><span class="dots"></span><span>✓</span></li>
+            <li><span>Yuz yog‘i</span><span class="dots"></span><span>✓</span></li>
+            <li><span>Sara ilovasi</span><span class="dots"></span><span>umrbod</span></li>
+            <li class="free"><span>Yetkazish</span><span class="dots"></span><span>bepul</span></li>
+          </ul>
+        </div>
+        <div class="perf" aria-hidden="true"></div>
+        <div class="t-bot">
+          <div class="seats-h"><span>30 o‘rin</span><span><b data-spots>17</b> ta bo‘sh</span></div>
+          <div class="seats" id="seats" aria-hidden="true"></div>
+          <a class="cta" id="main-cta" data-tg href="https://t.me/saraaafit">
+            <span class="lbl">Telegram’da band qilish</span>
+            <span class="tgi"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg></span>
+          </a>
+          <p class="cta-sub">Xabar tayyor turadi — faqat “Yuborish”</p>
+        </div>
+      </div>
+
+      <div class="guar rv">
+        <div class="seal" aria-hidden="true">
+          <svg viewBox="0 0 104 104" width="104" height="104">
+            <defs><path id="c" d="M52 52 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+            <text font-family="Inter, sans-serif" font-size="9.4" font-weight="600" letter-spacing="0" fill="#6B57AE"><textPath href="#c" textLength="274" lengthAdjust="spacing">PUL QAYTARISH KAFOLATI • PUL QAYTARISH KAFOLATI •</textPath></text>
+          </svg>
+          <b>100%</b>
+        </div>
+        <div><h3>Natija bo‘lmasa — pul qaytadi</h3><p>28 kunlik dasturni bajaring. Natija ko‘rmasangiz, pulingiz to‘liq qaytariladi.</p></div>
+      </div>
+
+      <div class="receipt rv">
+        <div class="rc-h"><small>Buyurtma</small><b>3 qadam</b></div>
+        <ol class="rc">
+          <li><div><b>Tugmani bosing</b><p>Telegram ochiladi, xabar allaqachon yozilgan.</p></div></li>
+          <li><div><b>“Yuborish”ni bosing</b><p>Menejer to‘lov va manzilni aniqlaydi.</p></div></li>
+          <li><div><b>Box eshigingizda</b><p>Toshkentda bepul. Ilovaga kirish ham beriladi.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- vi. FAQ -->
+    <section class="sec" id="savol" aria-labelledby="h8s">
+      <div class="sec-k rv"><span><b>vi.</b> Savol-javob</span><span>14</span></div>
+      <h2 id="h8s" class="rv">Ko‘p <i>so‘raladi</i></h2>
+      <div class="faq" data-stagger>
+        <details><summary><span class="q">Q.01</span><span class="t">Natija qachon ko‘rinadi?</span></summary><p>Dastur 28 kunga mo‘ljallangan. 1-kun va 28-kun suratlarini solishtirib, o‘zgarishni o‘zingiz ko‘rasiz. Natija har kimda turlicha.</p></details>
+        <details><summary><span class="q">Q.02</span><span class="t">Erkaklarga ham mosmi?</span></summary><p>Ha. Guasha massaji va mashqlar ayollar uchun ham, erkaklar uchun ham mos.</p></details>
+        <details><summary><span class="q">Q.03</span><span class="t">Ilova qanday ishlaydi?</span></summary><p>Telefoningizga o‘rnatasiz. Har kun uchun video dars va reja bor. Bir marta to‘laysiz — umrbod foydalanasiz.</p></details>
+        <details><summary><span class="q">Q.04</span><span class="t">Og‘riqli emasmi?</span></summary><p>Yo‘q. Massaj yog‘ bilan, yumshoq bosimda qilinadi. Terida yallig‘lanish yoki kasallik bo‘lsa, avval shifokor bilan maslahatlashing.</p></details>
+        <details><summary><span class="q">Q.05</span><span class="t">Yetkazib berish qanday?</span></summary><p>Toshkent bo‘ylab — bepul, eshigingizgacha. Viloyatlarga yetkazish haqida Telegram’da so‘rang.</p></details>
+        <details><summary><span class="q">Q.06</span><span class="t">To‘lov qanday qilinadi?</span></summary><p>Telegram’da yozganingizdan so‘ng menejer to‘lov usuli va yetkazish vaqtini aytadi.</p></details>
+        <details><summary><span class="q">Q.07</span><span class="t">Pul qaytarish qanday ishlaydi?</span></summary><p>28 kunlik dasturni bajarib, natija ko‘rmasangiz — pulingiz to‘liq qaytariladi. Batafsil shartlarni Telegram’da aytamiz.</p></details>
+      </div>
+    </section>
+
+    <section class="final rv" id="final">
+      <h2>Ritualni <i>bugun</i> boshlang</h2>
+      <p>399 000 so‘m — faqat 30 kishi uchun. Joylar tugagach narx 798 000 so‘mga qaytadi.</p>
+      <a class="cta" data-tg href="https://t.me/saraaafit">
+        <span class="lbl">Telegram’da yozish</span>
+        <span class="tgi"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg></span>
+      </a>
+      <p class="cta-sub"><span data-spots>17</span> ta joy qoldi</p>
+    </section>
+
+    <footer><span>© 2026 Sara</span><span>@saraaafit</span></footer>
+  </main>
+
+  <div class="dock" id="dock">
+    <a class="cta" data-tg href="https://t.me/saraaafit">
+      <span class="lbl">399 000 so‘m · Band qilish<small><span data-spots>17</span> ta joy qoldi</small></span>
+      <span class="tgi"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg></span>
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      // ─── Sozlamalar — shu yerdan o‘zgartiring ───
+      var CONFIG = {
+        telegram: 'saraaafit',
+        site: 'S2',               // qaysi saytdan kelganini ajratish uchun (promo kodga qo‘shiladi)
+        promoCode: 'SARA399',
+        message: 'Assalomu alaykum! 👋\n' +
+                 'Saytdan yozyapman — Sara box + umrbod ilovani 399 000 so‘mga band qilmoqchiman.\n' +
+                 'To‘lov va yetkazib berish qanday bo‘ladi?\n\n' +
+                 'Promo kod: {code}',
+        totalSpots: 30,
+        spotsLeft: 17,            // qolgan joylar — qo‘lda yangilang
+        fastOpen: true,           // telefonda Telegram ilovasini to‘g‘ridan-to‘g‘ri ochish (t.me sahifasisiz)
+        metaPixelId: ''           // masalan '1234567890'
+      };
+
+      // ─── Telegram ───
+      function promoCode() {
+        var tag = '';
+        try {
+          var q = new URLSearchParams(location.search);
+          tag = (q.get('ad') || q.get('utm_content') || '').toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 16);
+        } catch (_) {}
+        return CONFIG.promoCode + '-' + CONFIG.site + (tag ? '-' + tag : '');
+      }
+      var msg = CONFIG.message.replace('{code}', promoCode());
+      var webUrl = 'https://t.me/' + CONFIG.telegram + '?text=' + encodeURIComponent(msg);
+      var appUrl = 'tg://resolve?domain=' + CONFIG.telegram + '&text=' + encodeURIComponent(msg);
+      var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (CONFIG.metaPixelId) {
+        !function (f, b, e, v, n, t, s) {
+          if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+          if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+          t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', CONFIG.metaPixelId);
+        fbq('track', 'PageView');
+      }
+
+      function openTelegram() {
+        try { navigator.clipboard.writeText(msg).catch(function () {}); } catch (_) {}
+        if (window.fbq) fbq('track', 'Lead', { content_name: CONFIG.site });
+        setTimeout(function () {
+          if (!(CONFIG.fastOpen && mobile)) { location.href = webUrl; return; }
+          var left = false;
+          var onHide = function () { if (document.hidden) left = true; };
+          document.addEventListener('visibilitychange', onHide);
+          location.href = appUrl;
+          setTimeout(function () {
+            document.removeEventListener('visibilitychange', onHide);
+            if (!left && !document.hidden) location.href = webUrl;
+          }, 1200);
+        }, window.fbq ? 250 : 0);
+      }
+
+      document.querySelectorAll('[data-tg]').forEach(function (a) {
+        a.href = webUrl;
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          var lbl = a.querySelector('.lbl'), old = lbl && lbl.innerHTML;
+          a.classList.add('busy');
+          if (lbl) lbl.textContent = 'Telegram ochilmoqda…';
+          setTimeout(function () { a.classList.remove('busy'); if (lbl) lbl.innerHTML = old; }, 2500);
+          openTelegram();
+        });
+      });
+
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ─── Joylar ───
+      document.querySelectorAll('[data-spots]').forEach(function (el) { el.textContent = CONFIG.spotsLeft; });
+      var seats = document.getElementById('seats');
+      var taken = CONFIG.totalSpots - CONFIG.spotsLeft;
+      for (var i = 0; i < CONFIG.totalSpots; i++) {
+        var d = document.createElement('i');
+        d.style.transitionDelay = (i * 0.025) + 's';
+        seats.appendChild(d);
+      }
+      function fillSeats() {
+        seats.classList.add('in');
+        Array.prototype.forEach.call(seats.children, function (d, i) { if (i < taken) d.classList.add('on'); });
+      }
+
+      // ─── Kalendar ───
+      var WEEKS = [
+        { t: 'Odat', d: 'Texnikani videodan o‘rganasiz, 1-kun suratini olasiz. Har kuni 10 daqiqa.' },
+        { t: 'Yengillik', d: 'Massaj odatga aylanadi. Yuz yengilroq his qilinadi.' },
+        { t: 'Chiziq', d: 'Mashqlar murakkablashadi, e’tibor jag‘ chizig‘iga qaratiladi.' },
+        { t: 'Natija', d: '1-kun va 28-kun suratlarini yonma-yon qo‘yib solishtirasiz.' }
+      ];
+      var cal = document.getElementById('cal');
+      for (var k = 1; k <= 28; k++) {
+        var c = document.createElement('i');
+        c.textContent = k;
+        c.setAttribute('data-w', String(Math.ceil(k / 7)));
+        c.style.transitionDelay = (k * 0.03) + 's';
+        cal.appendChild(c);
+      }
+      var wBtns = document.querySelectorAll('.weeks button');
+      var wn = document.getElementById('wn'), wt = document.getElementById('wt'), wd = document.getElementById('wd');
+      function selWeek(w, highlight) {
+        wBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-w') === String(w))); });
+        wn.textContent = w; wt.textContent = WEEKS[w - 1].t; wd.textContent = WEEKS[w - 1].d;
+        cal.classList.toggle('sel', !!highlight);
+        Array.prototype.forEach.call(cal.children, function (c) {
+          if (highlight) c.style.transitionDelay = '0s';
+          c.classList.toggle('on', c.getAttribute('data-w') === String(w));
+        });
+      }
+      wBtns.forEach(function (b) { b.addEventListener('click', function () { selWeek(+b.getAttribute('data-w'), true); }); });
+      selWeek(1, false);
+      function fillCal() {
+        Array.prototype.forEach.call(cal.children, function (c) { c.classList.add('f'); });
+      }
+
+      // ─── Checklist ───
+      var boxes = document.querySelectorAll('#chk input');
+      var verdict = document.getElementById('verdict'), score = document.getElementById('score'), vtext = document.getElementById('vtext');
+      boxes.forEach(function (b) {
+        b.addEventListener('change', function () {
+          var n = Array.prototype.filter.call(boxes, function (x) { return x.checked; }).length;
+          score.textContent = n + '/5';
+          verdict.classList.toggle('ok', n >= 2);
+          vtext.textContent = n === 0 ? 'Sizga mos keladiganlarini belgilang'
+            : n === 1 ? 'Yana bittasi bo‘lsa — Sara aynan siz uchun'
+            : 'Sara aynan siz uchun. 28 kunda farqni ko‘ring ✓';
+        });
+      });
+
+      // ─── Scroll animatsiyalari ───
+      document.querySelectorAll('[data-stagger]').forEach(function (g) {
+        Array.prototype.forEach.call(g.children, function (el, i) { el.classList.add('rv'); el.style.setProperty('--d', (i * 0.07) + 's'); });
+      });
+      var els = document.querySelectorAll('.rv, [data-watch]');
+      function onIn(el) {
+        el.classList.add('in');
+        if (el.contains(seats)) setTimeout(fillSeats, 300);
+        if (el === cal) setTimeout(fillCal, 200);
+      }
+      if ('IntersectionObserver' in window && !reduce) {
+        var ro = new IntersectionObserver(function (en) {
+          en.forEach(function (e) { if (e.isIntersecting) { onIn(e.target); ro.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        els.forEach(function (el) { ro.observe(el); });
+      } else {
+        els.forEach(onIn);
+      }
+
+      // ─── Pastki panel ───
+      var dock = document.getElementById('dock');
+      var watched = [document.getElementById('main-cta'), document.querySelector('#final .cta')];
+      var vis = new Set();
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (en) {
+          en.forEach(function (e) { e.isIntersecting ? vis.add(e.target) : vis.delete(e.target); });
+          dock.classList.toggle('show', vis.size === 0);
+        });
+        watched.forEach(function (el) { io.observe(el); });
+      } else dock.classList.add('show');
+    })();
+  </script>
+</body>
+</html>

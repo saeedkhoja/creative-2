@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sara Creatives</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="s1-noir/assets/favicon.png">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #F4F1FA; --card: #fff; --ink: #1B1724; --mute: #77708A; --line: rgba(27, 23, 36, .09); --lav: #6B57AE; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #0E0C13; --card: #18151F; --ink: #F1EEF8; --mute: #9C95AE; --line: rgba(255, 255, 255, .08); --lav: #B3A1F0; } }
+    body { background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; padding: 28px 16px 40px; }
+    .wrap { max-width: 1080px; margin: 0 auto; }
+    h1 { font-size: 22px; }
+    p.sub { margin-top: 4px; color: var(--mute); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-top: 20px; }
+    a.card { display: block; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; transition: transform .15s; }
+    a.card:hover { transform: translateY(-3px); }
+    .frame { position: relative; aspect-ratio: 9 / 16; overflow: hidden; background: #000; }
+    .frame iframe { position: absolute; top: 0; left: 0; width: 375px; height: 667px; border: 0; transform-origin: 0 0; pointer-events: none; }
+    .meta { padding: 10px 12px 12px; }
+    .meta b { display: block; }
+    .meta span { font-size: 13px; color: var(--mute); }
+    .meta code { font-size: 12px; color: var(--lav); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Sara — 5 xil landing</h1>
+    <p class="sub">Har biri alohida papka — alohida domen/hostingga joylanadi. Promo kod orqali qaysi saytdan kelgani ko‘rinadi.</p>
+    <div class="grid">
+      <a class="card" href="s1-noir/"><div class="frame"><iframe scrolling="no" src="s1-noir/" loading="lazy" tabindex="-1" title="Noir"></iframe></div><div class="meta"><b>S1 · Noir</b><span>Qora kinematik · 9 bob, flip-kartalar, siferblat</span><br><code>SARA399-S1</code></div></a>
+      <a class="card" href="s2-pearl/"><div class="frame"><iframe scrolling="no" src="s2-pearl/" loading="lazy" tabindex="-1" title="Pearl"></iframe></div><div class="meta"><b>S2 · Pearl</b><span>Jurnal · mundarija, kalendar, test</span><br><code>SARA399-S2</code></div></a>
+      <a class="card" href="s3-bento/"><div class="frame"><iframe scrolling="no" src="s3-bento/" loading="lazy" tabindex="-1" title="Bento"></iframe></div><div class="meta"><b>S3 · Bento</b><span>Ilova · test, demo-taymer, tablar</span><br><code>SARA399-S3</code></div></a>
+      <a class="card" href="s4-story/"><div class="frame"><iframe scrolling="no" src="s4-story/" loading="lazy" tabindex="-1" title="Story"></iframe></div><div class="meta"><b>S4 · Story</b><span>Stories, to‘liq ekran</span><br><code>SARA399-S4</code></div></a>
+      <a class="card" href="s5-chat/"><div class="frame"><iframe scrolling="no" src="s5-chat/" loading="lazy" tabindex="-1" title="Chat"></iframe></div><div class="meta"><b>S5 · Chat</b><span>Telegram chat ko‘rinishi</span><br><code>SARA399-S5</code></div></a>
+    </div>
+  </div>
+  <script>
+    function fit() {
+      document.querySelectorAll('.frame').forEach(function (f) {
+        var s = f.clientWidth / 375;
+        var ifr = f.querySelector('iframe');
+        ifr.style.height = (f.clientHeight / s) + 'px';
+        ifr.style.transform = 'scale(' + s + ')';
+      });
+    }
+    addEventListener('resize', fit); fit();
+  </script>
+</body>
+</html>

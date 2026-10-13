@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sara — 28 kunlik dastur</title>
+  <meta name="description" content="Sara box (2 xil guasha + yuz yog‘i) va umrbod ilova — 399 000 so‘m. Kuniga 10 daqiqa, uyda. Toshkentda yetkazish bepul. Natija bo‘lmasa, pul qaytariladi.">
+  <meta name="theme-color" content="#ECE8F5">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sara — −50%, faqat 30 kishi uchun">
+  <meta property="og:description" content="Sara box + umrbod ilova — 399 000 so‘m.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/oldin.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #ECE8F5;
+      --tile: #FFFFFF;
+      --ink: #17141F;
+      --mute: #7A7390;
+      --line: rgba(23, 20, 31, 0.07);
+      --lav: #8B76D6;
+      --lav-2: #6A54B8;
+      --lav-soft: #EEE9FB;
+      --mint: #34C789;
+      --rose: #FF5C7A;
+      --tg: #2AABEE;
+      --tg-2: #1C8FD0;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --disp: 'Unbounded', system-ui, sans-serif;
+    }
+
+    html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px; line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: calc(92px + env(safe-area-inset-bottom));
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    .wrap { width: 100%; max-width: 480px; margin: 0 auto; padding: 0 12px; }
+
+    .top { display: flex; align-items: center; justify-content: space-between; padding: 14px 4px 10px; }
+    .logo { height: 30px; width: auto; }
+    .status { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; color: var(--mute); }
+    .status i { width: 8px; height: 8px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 3px rgba(52, 199, 137, 0.2); animation: blink 2s ease-in-out infinite; }
+
+    h1 { font-family: var(--disp); font-weight: 600; font-size: clamp(28px, 8.4vw, 36px); line-height: 1.08; letter-spacing: -0.02em; padding: 6px 4px 6px; }
+    h1 span { color: var(--lav-2); }
+    .sub { padding: 0 4px 14px; font-size: 14.5px; color: var(--mute); }
+
+    /* Sticky tabs */
+    .tabs { position: sticky; top: 0; z-index: 40; margin: 0 -12px 10px; padding: 8px 12px; background: rgba(236, 232, 245, 0.86); -webkit-backdrop-filter: blur(16px) saturate(1.6); backdrop-filter: blur(16px) saturate(1.6); }
+    .tabs nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+    .tabs nav::-webkit-scrollbar { display: none; }
+    .tabs a { flex: none; padding: 8px 13px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--mute); background: var(--tile); border: 1px solid var(--line); transition: 0.25s; -webkit-tap-highlight-color: transparent; }
+    .tabs a.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .grp { scroll-margin-top: 62px; }
+    .gh { display: flex; align-items: baseline; justify-content: space-between; padding: 22px 4px 10px; }
+    .gh h2 { font-family: var(--disp); font-weight: 600; font-size: 20px; letter-spacing: -0.01em; }
+    .gh span { font-size: 12px; font-weight: 600; color: var(--mute); }
+
+    /* Grid */
+    .bento { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .t { position: relative; overflow: hidden; border-radius: 26px; padding: 16px; background: var(--tile); box-shadow: 0 1px 0 var(--line), 0 10px 30px rgba(55, 40, 110, 0.06); }
+    .w2 { grid-column: span 2; }
+    .lbl-s { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); }
+    .val { font-family: var(--disp); font-weight: 600; font-size: 34px; line-height: 1; letter-spacing: -0.03em; }
+    .val small { font-size: 14px; font-weight: 500; letter-spacing: 0; color: var(--mute); margin-left: 2px; }
+    .tt { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+    .tp { margin-top: 4px; font-size: 13px; color: var(--mute); line-height: 1.45; }
+
+    /* B/A tile */
+    .ba { padding: 8px; }
+    .ba-view { position: relative; aspect-ratio: 1; border-radius: 20px; overflow: hidden; background: #DDD7EA; }
+    .ba-view img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.6s var(--ease), transform 1.2s var(--ease); }
+    .ba-view img.k { opacity: 0; transform: scale(1.04); }
+    .ba[data-v='k'] .ba-view img.k { opacity: 1; transform: none; }
+    .seg { position: absolute; z-index: 2; left: 50%; bottom: 12px; transform: translateX(-50%); display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(23, 20, 31, 0.55); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+    .seg::before { content: ''; position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: #fff; transition: transform 0.45s var(--ease); }
+    .ba[data-v='k'] .seg::before { transform: translateX(100%); }
+    .seg button { position: relative; z-index: 1; border: 0; background: none; cursor: pointer; padding: 9px 20px; border-radius: 999px; font: 600 13px/1 'Inter', sans-serif; color: rgba(255, 255, 255, 0.85); transition: color 0.3s; -webkit-tap-highlight-color: transparent; }
+    .ba:not([data-v='k']) .seg button:first-child, .ba[data-v='k'] .seg button:last-child { color: var(--ink); }
+    .seg button:focus-visible { outline: 2px solid var(--lav); outline-offset: 2px; }
+    .ba-badge { position: absolute; z-index: 2; top: 12px; left: 12px; font-size: 11.5px; font-weight: 700; color: #fff; padding: 6px 10px; border-radius: 99px; background: rgba(23, 20, 31, 0.5); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    .ba-badge.k { left: auto; right: 12px; background: var(--mint); opacity: 0; transform: scale(0.8); transition: 0.4s var(--ease); }
+    .ba[data-v='k'] .ba-badge.k { opacity: 1; transform: none; }
+    .ba-note { position: absolute; z-index: 2; left: 0; right: 0; bottom: 58px; text-align: center; font-size: 10.5px; color: rgba(255, 255, 255, 0.8); text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); }
+
+    /* Ring + clock */
+    .ring { display: grid; place-items: center; text-align: center; padding: 14px; }
+    .ring svg { width: 100%; max-width: 128px; transform: rotate(-90deg); }
+    .ring circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+    .ring .tr { stroke: var(--lav-soft); }
+    .ring .pr { stroke: url(#rg); stroke-dasharray: 314; stroke-dashoffset: 314; transition: stroke-dashoffset 1.6s var(--ease); }
+    .ring.in .pr { stroke-dashoffset: 0; }
+    .ring-c { position: absolute; inset: 0; display: grid; place-content: center; }
+    .ring-c b { font-family: var(--disp); font-weight: 700; font-size: 30px; line-height: 1; }
+    .ring-c span { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mute); margin-top: 3px; }
+    .clock { display: flex; flex-direction: column; justify-content: space-between; gap: 10px; }
+    .dial { position: relative; width: 52px; height: 52px; border-radius: 50%; background: var(--lav-soft); box-shadow: inset 0 0 0 2px #fff, 0 0 0 1px var(--line); }
+    .dial::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(var(--lav) 0 60deg, transparent 60deg); opacity: 0.45; }
+    .dial i { position: absolute; left: 50%; bottom: 50%; width: 2px; margin-left: -1px; border-radius: 2px; background: var(--ink); transform-origin: bottom center; }
+    .dial i.h { height: 13px; transform: rotate(60deg); }
+    .dial i.m { height: 19px; background: var(--lav-2); animation: spin 6s linear infinite; }
+    .dial::after { content: ''; position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: var(--ink); }
+
+    /* Quiz */
+    .quiz { padding: 18px; background: linear-gradient(160deg, #fff, #F5F1FF); }
+    .q-top { display: flex; justify-content: space-between; align-items: center; }
+    .q-dots { display: flex; gap: 4px; }
+    .q-dots i { width: 22px; height: 5px; border-radius: 9px; background: var(--lav-soft); transition: background 0.3s; }
+    .q-dots i.on { background: var(--lav-2); }
+    .q-pane { margin-top: 14px; animation: qin 0.45s var(--ease); }
+    .q-pane[hidden] { display: none; }
+    .q-pane h3 { font-family: var(--disp); font-weight: 600; font-size: 19px; line-height: 1.2; letter-spacing: -0.01em; }
+    .q-opts { display: grid; gap: 6px; margin-top: 12px; }
+    .q-opts.two { grid-template-columns: 1fr 1fr; }
+    .q-opts button { display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 16px; border: 1.5px solid var(--line); background: #fff; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 600; transition: 0.2s; -webkit-tap-highlight-color: transparent; }
+    .q-opts button span { font-size: 20px; }
+    .q-opts button:active { transform: scale(0.98); }
+    .q-opts button:focus-visible { outline: 2px solid var(--lav); outline-offset: 2px; }
+    .q-opts button.sel { border-color: var(--lav-2); background: var(--lav-soft); }
+    .q-res .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 6px 10px; border-radius: 99px; color: #137A4E; background: #E4F8EE; }
+    .q-res h3 { margin-top: 10px; }
+    .plan { list-style: none; margin-top: 12px; display: grid; gap: 6px; }
+    .plan li { display: flex; gap: 10px; padding: 11px 12px; border-radius: 14px; background: #fff; border: 1px solid var(--line); font-size: 13.5px; line-height: 1.4; }
+    .plan li b { flex: none; font-family: var(--disp); font-weight: 600; font-size: 12px; color: var(--lav-2); padding-top: 1px; }
+    .q-again { margin-top: 10px; border: 0; background: none; font-size: 12.5px; font-weight: 600; color: var(--mute); text-decoration: underline; cursor: pointer; }
+
+    /* Cause tiles */
+    .cause .ico { margin-bottom: 12px; }
+    .ico { width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center; color: var(--lav-2); background: var(--lav-soft); }
+
+    /* Timer */
+    .timer { background: var(--ink); color: #fff; padding: 18px; }
+    .timer::before { content: ''; position: absolute; width: 260px; height: 260px; left: -100px; bottom: -150px; border-radius: 50%; background: radial-gradient(circle, rgba(139, 118, 214, 0.5), transparent 65%); }
+    .tm-top { position: relative; display: flex; justify-content: space-between; align-items: center; }
+    .tm-top .lbl-s { color: rgba(255, 255, 255, 0.55); }
+    .tm-play { display: inline-flex; align-items: center; gap: 7px; padding: 8px 13px; border-radius: 99px; border: 0; background: #fff; color: var(--ink); font-size: 13px; font-weight: 700; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .tm-play:focus-visible { outline: 2px solid var(--lav); outline-offset: 2px; }
+    .tm-time { position: relative; margin-top: 14px; font-family: var(--disp); font-weight: 600; font-size: 56px; line-height: 1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+    .tm-phase { position: relative; margin-top: 6px; min-height: 40px; font-size: 13.5px; color: rgba(255, 255, 255, 0.75); }
+    .tm-phase b { color: #fff; }
+    .tm-bar { position: relative; display: grid; grid-template-columns: 1fr 4fr 5fr; gap: 4px; margin-top: 14px; }
+    .tm-bar span { height: 8px; border-radius: 9px; background: rgba(255, 255, 255, 0.14); overflow: hidden; }
+    .tm-bar span i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #B7A6F2, #fff); border-radius: inherit; }
+    .tm-l { position: relative; display: grid; grid-template-columns: 1fr 4fr 5fr; gap: 4px; margin-top: 6px; font-size: 11px; color: rgba(255, 255, 255, 0.55); }
+
+    /* Weeks */
+    .weeks { padding: 16px 0 14px; }
+    .weeks .lbl-s { padding: 0 16px; }
+    .wk-rail { display: grid; grid-auto-flow: column; grid-auto-columns: 74%; gap: 8px; margin-top: 12px; padding: 0 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 16px; scrollbar-width: none; }
+    .wk-rail::-webkit-scrollbar { display: none; }
+    .wk { scroll-snap-align: start; padding: 14px; border-radius: 20px; background: var(--lav-soft); }
+    .wk:nth-child(2) { background: #E2DAFA; }
+    .wk:nth-child(3) { background: #D3C8F6; }
+    .wk:nth-child(4) { background: var(--lav-2); color: #fff; }
+    .wk:nth-child(4) .tp { color: rgba(255, 255, 255, 0.75); }
+    .wk-n { display: flex; justify-content: space-between; align-items: center; }
+    .wk-n b { font-family: var(--disp); font-weight: 600; font-size: 13px; }
+    .wk-n span { font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 99px; background: rgba(255, 255, 255, 0.7); color: var(--ink); }
+    .wk .tt { margin-top: 18px; font-size: 18px; }
+    .wk-dots { display: flex; justify-content: center; gap: 5px; margin-top: 10px; }
+    .wk-dots i { width: 6px; height: 6px; border-radius: 9px; background: var(--lav-soft); transition: 0.3s; }
+    .wk-dots i.on { width: 18px; background: var(--lav-2); }
+
+    /* Price */
+    .price { background: var(--ink); color: #fff; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 10px; padding: 18px; }
+    .price::before { content: ''; position: absolute; width: 240px; height: 240px; right: -90px; top: -120px; border-radius: 50%; background: radial-gradient(circle, rgba(139, 118, 214, 0.55), transparent 65%); }
+    .price .lbl-s { color: rgba(255, 255, 255, 0.55); }
+    .price s { display: block; margin-top: 10px; font-size: 14px; color: rgba(255, 255, 255, 0.45); text-decoration-color: var(--rose); text-decoration-thickness: 2px; }
+    .price .val { font-size: clamp(30px, 9vw, 38px); margin-top: 4px; white-space: nowrap; }
+    .price .val small { color: rgba(255, 255, 255, 0.6); }
+    .off { position: relative; width: 64px; height: 64px; flex: none; border-radius: 50%; display: grid; place-items: center; font-family: var(--disp); font-weight: 700; font-size: 16px; color: var(--ink); background: linear-gradient(140deg, #fff, #DCD2FA); animation: wob 4s ease-in-out infinite; }
+
+    /* Item tiles */
+    .item { display: flex; flex-direction: column; gap: 14px; }
+    .item b { font-size: 15px; line-height: 1.2; }
+    .item .lbl-s { display: block; margin-top: 3px; }
+    .qty { position: absolute; top: 14px; right: 14px; font-family: var(--disp); font-weight: 600; font-size: 13px; padding: 5px 9px; border-radius: 99px; background: var(--ink); color: #fff; }
+
+    /* App tile */
+    .app { display: grid; grid-template-columns: 1fr 112px; gap: 12px; align-items: center; padding: 18px 16px 0 18px; color: #fff; background: linear-gradient(150deg, #9B87E4, var(--lav-2) 70%); }
+    .app .lbl-s { color: rgba(255, 255, 255, 0.7); }
+    .app .val { font-size: 44px; margin-top: 6px; }
+    .app .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; padding-bottom: 18px; }
+    .app .chips span { font-size: 11.5px; font-weight: 600; padding: 5px 9px; border-radius: 99px; background: rgba(255, 255, 255, 0.18); }
+    .phone { align-self: end; height: 168px; padding: 8px 7px 0; border-radius: 22px 22px 0 0; background: #17141F; box-shadow: 0 -10px 30px rgba(23, 20, 31, 0.25); }
+    .screen { height: 100%; border-radius: 15px 15px 0 0; background: #F7F5FC; padding: 10px 7px 0; overflow: hidden; color: var(--ink); }
+    .screen .bar { height: 5px; border-radius: 9px; background: var(--lav-soft); overflow: hidden; margin-bottom: 8px; }
+    .screen .bar i { display: block; height: 100%; width: 0; background: var(--lav); border-radius: inherit; transition: width 1.6s var(--ease) 0.3s; }
+    .app.in .screen .bar i { width: 14%; }
+    .day { display: flex; align-items: center; gap: 5px; padding: 5px; margin-bottom: 4px; border-radius: 8px; background: #fff; font-size: 8.5px; font-weight: 600; }
+    .day::before { content: ''; flex: none; width: 11px; height: 11px; border-radius: 50%; background: var(--lav-soft); }
+    .day.ok::before { background: var(--mint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 8px no-repeat; }
+    .day.now { outline: 1.5px solid var(--lav); }
+    .day em { margin-left: auto; font-style: normal; color: var(--mute); font-weight: 500; }
+
+    /* Who */
+    .who { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .who span { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 99px; font-size: 13px; font-weight: 600; background: var(--lav-soft); }
+    .who span::before { content: '✓'; font-size: 11px; font-weight: 800; color: var(--lav-2); }
+
+    /* Compare */
+    .cmpt table { width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 13.5px; }
+    .cmpt th, .cmpt td { padding: 10px 6px; text-align: center; border-bottom: 1px solid var(--line); }
+    .cmpt th:first-child, .cmpt td:first-child { text-align: left; padding-left: 0; color: var(--mute); font-weight: 600; }
+    .cmpt thead th { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--mute); }
+    .cmpt thead th.s { color: var(--lav-2); }
+    .cmpt td.s { background: var(--lav-soft); }
+    .cmpt tr:last-child td { border-bottom: 0; }
+    .y, .n { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; font-size: 12px; font-weight: 800; }
+    .y { background: var(--mint); color: #fff; }
+    .n { background: #F1EFF5; color: #B5AFC3; }
+
+    /* Shield + delivery */
+    .shield { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; background: #E4F8EE; }
+    .shield .ico { background: #fff; color: #1E9E66; }
+    .shield .val { color: #137A4E; }
+    .shield .lbl-s { color: #3C8C67; }
+
+    /* Seats */
+    .seats-h { display: flex; justify-content: space-between; align-items: center; }
+    .seats-h .val { font-size: 26px; }
+    .hot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: #D9365E; padding: 5px 10px; border-radius: 99px; background: #FFE8EE; }
+    .hot i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: blink 1.2s ease-in-out infinite; }
+    .grid30 { display: grid; grid-template-columns: repeat(15, 1fr); gap: 5px; margin-top: 12px; }
+    .grid30 i { aspect-ratio: 1; border-radius: 6px; background: var(--lav-soft); transition: background 0.35s, transform 0.35s var(--ease); }
+    .grid30 i.on { background: var(--ink); transform: scale(0.88); }
+
+    /* Order */
+    .order { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; position: relative; }
+    .order::before { content: ''; position: absolute; top: 17px; left: 16%; right: 16%; height: 2px; background: repeating-linear-gradient(90deg, var(--lav) 0 6px, transparent 6px 11px); }
+    .order li { position: relative; text-align: center; }
+    .order li > i { display: grid; place-items: center; width: 36px; height: 36px; margin: 0 auto; border-radius: 50%; font-style: normal; font-family: var(--disp); font-weight: 600; font-size: 14px; color: #fff; background: var(--ink); box-shadow: 0 0 0 4px #fff; }
+    .order b { display: block; margin-top: 8px; font-size: 13px; line-height: 1.25; }
+    .order small { display: block; margin-top: 2px; font-size: 11.5px; color: var(--mute); line-height: 1.35; }
+
+    /* FAQ */
+    .faq details { border-bottom: 1px solid var(--line); }
+    .faq details:last-child { border-bottom: 0; }
+    .faq summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 0; font-weight: 600; font-size: 14.5px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: ''; flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--lav-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236A54B8' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / 14px no-repeat; transition: transform 0.35s var(--ease); }
+    .faq details[open] summary::after { transform: rotate(180deg); }
+    .faq p { padding: 0 0 14px; font-size: 13.5px; color: var(--mute); }
+
+    /* CTA */
+    .cta { position: relative; overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 8px; padding: 19px 20px; border-radius: 22px; font-weight: 700; font-size: 16.5px; color: #fff; background: linear-gradient(180deg, #3CB8F4, var(--tg-2)); box-shadow: 0 14px 32px rgba(28, 143, 208, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35); animation: pulse 2.4s var(--ease) infinite; transition: transform 0.15s; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .cta::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; width: 40%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent); animation: shine 3.2s ease-in-out infinite; }
+    .cta:active { transform: scale(0.98); }
+    .cta:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+    .cta.busy { opacity: 0.85; pointer-events: none; }
+    .cta-sub { margin-top: 10px; text-align: center; font-size: 12.5px; color: var(--mute); }
+
+    footer { margin-top: 24px; text-align: center; font-size: 12px; color: var(--mute); }
+
+    .dock { position: fixed; z-index: 50; left: 50%; bottom: 0; width: 100%; max-width: 480px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; background: rgba(236, 232, 245, 0.85); -webkit-backdrop-filter: blur(16px) saturate(1.6); backdrop-filter: blur(16px) saturate(1.6); border-top: 1px solid var(--line); transform: translate(-50%, 110%); visibility: hidden; transition: transform 0.4s var(--ease), visibility 0.4s; }
+    .dock.show { transform: translate(-50%, 0); visibility: visible; }
+    .dock-p { padding: 0 6px; line-height: 1.15; }
+    .dock-p b { font-family: var(--disp); font-weight: 600; font-size: 19px; }
+    .dock-p small { display: block; font-size: 11.5px; color: var(--mute); }
+    .dock .cta { margin: 0; padding: 15px; font-size: 15px; border-radius: 18px; animation: none; }
+
+    .js .rv { opacity: 0; transform: translateY(18px) scale(0.98); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); transition-delay: var(--d, 0s); }
+    .js .rv.in { opacity: 1; transform: none; }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes wob { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(6deg) scale(1.05); } }
+    @keyframes qin { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+    @keyframes pulse { 0%, 100% { box-shadow: 0 14px 32px rgba(28, 143, 208, 0.38), 0 0 0 0 rgba(42, 171, 238, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35); } 60% { box-shadow: 0 14px 32px rgba(28, 143, 208, 0.38), 0 0 0 12px rgba(42, 171, 238, 0), inset 0 1px 0 rgba(255, 255, 255, 0.35); } }
+    @keyframes shine { 0% { transform: translateX(-120%) skewX(-18deg); } 55%, 100% { transform: translateX(320%) skewX(-18deg); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+      .js .rv { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B7A6F2"/><stop offset="1" stop-color="#6A54B8"/></linearGradient></defs>
+  </svg>
+
+  <header class="top wrap">
+    <img class="logo" src="assets/sara-logo.png" alt="Sara" width="101" height="38">
+    <span class="status"><i></i>Hozir faol</span>
+  </header>
+
+  <main class="wrap">
+    <h1 class="rv">Baqbaqaga<br>qarshi <span>28 kun</span></h1>
+    <p class="sub rv">Guasha massaji + video mashqlar. Kuniga 10 daqiqa, uyda.</p>
+
+    <div class="tabs">
+      <nav id="tabs" aria-label="Bo‘limlar">
+        <a href="#g-natija" class="on">Natija</a>
+        <a href="#g-test">Test</a>
+        <a href="#g-usul">Usul</a>
+        <a href="#g-reja">Reja</a>
+        <a href="#g-box">Box</a>
+        <a href="#g-narx">Narx</a>
+        <a href="#g-faq">Savollar</a>
+      </nav>
+    </div>
+
+    <!-- Natija -->
+    <section class="grp" id="g-natija" aria-label="Natija">
+      <div class="bento">
+        <div class="t w2 ba rv" id="ba">
+          <div class="ba-view">
+            <img class="o" src="assets/oldin.jpg" alt="Saraaa’dan oldin: baqbaqa ko‘rinadi" width="640" height="640">
+            <img class="k" src="assets/keyin.jpg" alt="Saraaa’dan keyin: jag‘ chizig‘i aniqroq" width="640" height="640" loading="lazy">
+            <span class="ba-badge">1-kun</span>
+            <span class="ba-badge k">28-kun ✓</span>
+            <span class="ba-note">Natija har kimda turlicha</span>
+            <div class="seg" role="group" aria-label="Rasmni tanlash">
+              <button type="button" data-v="o" aria-pressed="true">Oldin</button>
+              <button type="button" data-v="k" aria-pressed="false">Keyin</button>
+            </div>
+          </div>
+        </div>
+        <div class="t ring rv" aria-label="28 kunlik dastur">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="tr" cx="60" cy="60" r="50"/><circle class="pr" cx="60" cy="60" r="50"/></svg>
+          <div class="ring-c"><b>28</b><span>kun</span></div>
+        </div>
+        <div class="t clock rv" style="--d:.06s" aria-label="Kuniga 10 daqiqa">
+          <div class="dial" aria-hidden="true"><i class="h"></i><i class="m"></i></div>
+          <div><div class="val">10<small>daq</small></div><span class="lbl-s">kuniga</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Test -->
+    <section class="grp" id="g-test" aria-labelledby="gt">
+      <div class="gh"><h2 id="gt">30 soniyalik test</h2><span>3 savol</span></div>
+      <div class="t w2 quiz rv" id="quiz">
+        <div class="q-top"><span class="lbl-s" id="qStep">1 / 3</span><div class="q-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div></div>
+
+        <div class="q-pane" data-q="0">
+          <h3>Siz kimsiz?</h3>
+          <div class="q-opts two">
+            <button type="button" data-a="Ayol"><span>👩</span>Ayol</button>
+            <button type="button" data-a="Erkak"><span>👨</span>Erkak</button>
+          </div>
+        </div>
+        <div class="q-pane" data-q="1" hidden>
+          <h3>Baqbaqa qachondan beri bor?</h3>
+          <div class="q-opts">
+            <button type="button" data-a="Yaqinda"><span>🌱</span>Yaqinda paydo bo‘ldi</button>
+            <button type="button" data-a="1–2 yil"><span>📆</span>1–2 yildan beri</button>
+            <button type="button" data-a="Ko‘p yil"><span>⏳</span>Ko‘p yillardan beri</button>
+          </div>
+        </div>
+        <div class="q-pane" data-q="2" hidden>
+          <h3>Kuniga telefonga qancha qaraysiz?</h3>
+          <div class="q-opts">
+            <button type="button" data-a="1–2 soat"><span>📱</span>1–2 soat</button>
+            <button type="button" data-a="3–5 soat"><span>📱📱</span>3–5 soat</button>
+            <button type="button" data-a="5+ soat"><span>🔥</span>5 soatdan ko‘p</button>
+          </div>
+        </div>
+        <div class="q-pane q-res" data-q="3" hidden aria-live="polite">
+          <span class="badge">✓ Sara sizga mos</span>
+          <h3>Sizning 28 kunlik rejangiz</h3>
+          <ul class="plan" id="plan"></ul>
+          <a class="cta" data-tg data-quiz href="https://t.me/saraaafit" style="margin-top:12px">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg>
+            <span class="lbl">Rejani Telegram’da olish</span>
+          </a>
+          <button type="button" class="q-again" id="qAgain">Qaytadan</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usul -->
+    <section class="grp" id="g-usul" aria-labelledby="gu">
+      <div class="gh"><h2 id="gu">Nega chiqadi?</h2><span>4 sabab</span></div>
+      <div class="bento">
+        <div class="t cause rv"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><div class="tt">Telefon</div><p class="tp">Pastga egilgan bo‘yin iyak ostini bo‘shashtiradi</p></div>
+        <div class="t cause rv" style="--d:.06s"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3 4.2-5 7.1-5 9.6a5 5 0 0 0 10 0C17 10.1 15 7.2 12 3z"/></svg></span><div class="tt">Shish</div><p class="tp">Turib qolgan suyuqlik iyak ostini og‘irlashtiradi</p></div>
+        <div class="t cause rv"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15c3-1 5-4 8-4s5 3 8 4"/><path d="M4 19c3-1 5-4 8-4s5 3 8 4"/></svg></span><div class="tt">Mushak</div><p class="tp">Ishlamagan mushak — yumshoq yuz chizig‘i</p></div>
+        <div class="t cause rv" style="--d:.06s"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><div class="tt">Yosh</div><p class="tp">Teri elastikligi yillar bilan kamayadi</p></div>
+      </div>
+
+      <div class="gh"><h2>Qanday ishlaydi?</h2><span>10 daqiqa</span></div>
+      <div class="bento">
+        <div class="t w2 timer rv" id="timer">
+          <div class="tm-top"><span class="lbl-s">Kunlik ritual</span><button type="button" class="tm-play" id="tmPlay"><svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></svg><span>Demo</span></button></div>
+          <div class="tm-time" id="tmTime">10:00</div>
+          <p class="tm-phase" id="tmPhase" aria-live="polite"><b>Yog‘ → Guasha → Mashq.</b> “Demo”ni bosing — 10 daqiqa 10 soniyada.</p>
+          <div class="tm-bar" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span></div>
+          <div class="tm-l" aria-hidden="true"><span>1′</span><span>4′ guasha</span><span>5′ mashq</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reja -->
+    <section class="grp" id="g-reja" aria-labelledby="gr">
+      <div class="gh"><h2 id="gr">28 kunlik reja</h2><span>Suring →</span></div>
+      <div class="t w2 weeks rv">
+        <span class="lbl-s">4 hafta · 4 bosqich</span>
+        <div class="wk-rail" id="wkRail">
+          <article class="wk"><div class="wk-n"><b>1-hafta</b><span>1–7</span></div><div class="tt">Odat</div><p class="tp">Texnikani o‘rganasiz, 1-kun suratini olasiz.</p></article>
+          <article class="wk"><div class="wk-n"><b>2-hafta</b><span>8–14</span></div><div class="tt">Yengillik</div><p class="tp">Massaj odatga aylanadi, yuz yengilroq his qilinadi.</p></article>
+          <article class="wk"><div class="wk-n"><b>3-hafta</b><span>15–21</span></div><div class="tt">Chiziq</div><p class="tp">Mashqlar murakkablashadi, e’tibor jag‘ chizig‘iga.</p></article>
+          <article class="wk"><div class="wk-n"><b>4-hafta</b><span>22–28</span></div><div class="tt">Natija</div><p class="tp">1-kun va 28-kun suratlarini solishtirasiz.</p></article>
+        </div>
+        <div class="wk-dots" id="wkDots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- Box -->
+    <section class="grp" id="g-box" aria-labelledby="gb">
+      <div class="gh"><h2 id="gb">Box ichida</h2><span>+ ilova</span></div>
+      <div class="bento">
+        <div class="t item rv">
+          <span class="qty">×2</span>
+          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5C3 8.4 6.4 5 10.5 5h3C17.6 5 21 8.4 21 12.5c0 1.7-1.3 3-3 3-1.1 0-2.1-.6-2.6-1.6-.7-1.3-2-2.2-3.4-2.2s-2.7.9-3.4 2.2c-.5 1-1.5 1.6-2.6 1.6-1.7 0-3-1.3-3-3z"/></svg></span>
+          <div><b>Guasha</b><span class="lbl-s">yuz · bo‘yin</span></div>
+        </div>
+        <div class="t item rv" style="--d:.06s">
+          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6V4.5a2 2 0 0 1 4 0V6"/><rect x="9" y="6" width="6" height="3" rx="1"/><rect x="6.5" y="9" width="11" height="12.5" rx="3"/><path d="M12 13c-1 1.3-1.6 2.1-1.6 2.9a1.6 1.6 0 0 0 3.2 0c0-.8-.6-1.6-1.6-2.9z"/></svg></span>
+          <div><b>Yuz yog‘i</b><span class="lbl-s">massaj uchun</span></div>
+        </div>
+        <div class="t w2 app rv">
+          <div>
+            <span class="lbl-s">Sara ilovasi</span>
+            <div class="val">∞</div>
+            <div class="chips"><span>Umrbod</span><span>28 kunlik dastur</span><span>Video darslar</span><span>Haftalik surat</span></div>
+          </div>
+          <div class="phone" aria-hidden="true">
+            <div class="screen">
+              <div class="bar"><i></i></div>
+              <div class="day ok">1-kun<em>10 daq</em></div>
+              <div class="day ok">2-kun<em>10 daq</em></div>
+              <div class="day ok">3-kun<em>10 daq</em></div>
+              <div class="day now">4-kun<em>bugun</em></div>
+              <div class="day">5-kun</div>
+            </div>
+          </div>
+        </div>
+        <div class="t w2 rv">
+          <span class="lbl-s">Kimlar uchun</span>
+          <div class="who"><span>Iyak osti og‘ir</span><span>Jag‘ chizig‘i yo‘q</span><span>Ertalab shish</span><span>Ko‘p telefon</span><span>Salonga vaqt yo‘q</span><span>Ayol va erkak</span></div>
+        </div>
+        <div class="t w2 cmpt rv">
+          <span class="lbl-s">Taqqoslash</span>
+          <table>
+            <thead><tr><th scope="col"><span class="sr">Xususiyat</span></th><th scope="col" class="s">Sara</th><th scope="col">Salon</th><th scope="col">Hech narsa</th></tr></thead>
+            <tbody>
+              <tr><td>Uyda</td><td class="s"><span class="y">✓</span></td><td><span class="n">✕</span></td><td><span class="n">—</span></td></tr>
+              <tr><td>10 daqiqa</td><td class="s"><span class="y">✓</span></td><td><span class="n">✕</span></td><td><span class="n">—</span></td></tr>
+              <tr><td>Bir marta to‘lov</td><td class="s"><span class="y">✓</span></td><td><span class="n">✕</span></td><td><span class="n">—</span></td></tr>
+              <tr><td>Kafolat</td><td class="s"><span class="y">✓</span></td><td><span class="n">✕</span></td><td><span class="n">✕</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Narx -->
+    <section class="grp" id="g-narx" aria-labelledby="gn">
+      <div class="gh"><h2 id="gn">Narx</h2><span>−50%</span></div>
+      <div class="bento">
+        <div class="t w2 price rv">
+          <div>
+            <span class="lbl-s">Box + ilova</span>
+            <s>798 000 so‘m</s>
+            <div class="val">399 000<small>so‘m</small></div>
+          </div>
+          <span class="off">−50%</span>
+        </div>
+        <div class="t item rv">
+          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v9H3z"/><path d="M14 10h3.6a1 1 0 0 1 .8.4l2.4 3.2a1 1 0 0 1 .2.6V16h-7"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></span>
+          <div><b>Bepul</b><span class="lbl-s">Toshkent bo‘ylab</span></div>
+        </div>
+        <div class="t shield rv" style="--d:.06s">
+          <span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <div><div class="val">100%</div><span class="lbl-s">pul qaytadi</span></div>
+        </div>
+        <div class="t w2 rv" id="seats-t">
+          <div class="seats-h">
+            <div><div class="val"><span data-spots>17</span><small>/ 30</small></div><span class="lbl-s">joy qoldi</span></div>
+            <span class="hot"><i></i>Chegirma</span>
+          </div>
+          <div class="grid30" id="grid30" aria-hidden="true"></div>
+        </div>
+        <div class="t w2 rv">
+          <span class="lbl-s">Buyurtma · 3 qadam</span>
+          <ol class="order">
+            <li><i>1</i><b>Tugmani bosing</b><small>Xabar tayyor</small></li>
+            <li><i>2</i><b>“Yuborish”</b><small>To‘lov va manzil</small></li>
+            <li><i>3</i><b>Qabul qiling</b><small>Box + ilova</small></li>
+          </ol>
+        </div>
+      </div>
+      <a class="cta rv" id="main-cta" data-tg href="https://t.me/saraaafit">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg>
+        <span class="lbl">Telegram’da band qilish</span>
+      </a>
+      <p class="cta-sub">Xabar tayyor turadi — faqat “Yuborish”</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="grp" id="g-faq" aria-labelledby="gf">
+      <div class="gh"><h2 id="gf">Savollar</h2><span>7 ta</span></div>
+      <div class="t w2 faq rv">
+        <details><summary>Natija qachon ko‘rinadi?</summary><p>Dastur 28 kunga mo‘ljallangan. 1-kun va 28-kun suratlarini solishtirib, o‘zgarishni o‘zingiz ko‘rasiz. Natija har kimda turlicha.</p></details>
+        <details><summary>Erkaklarga ham mosmi?</summary><p>Ha. Guasha massaji va mashqlar ayollar uchun ham, erkaklar uchun ham mos.</p></details>
+        <details><summary>Ilova qanday ishlaydi?</summary><p>Telefoningizga o‘rnatasiz. Har kun uchun video dars va reja bor. Bir marta to‘laysiz — umrbod foydalanasiz.</p></details>
+        <details><summary>Og‘riqli emasmi?</summary><p>Yo‘q. Massaj yog‘ bilan, yumshoq bosimda qilinadi. Terida yallig‘lanish yoki kasallik bo‘lsa, avval shifokor bilan maslahatlashing.</p></details>
+        <details><summary>Yetkazib berish qanday?</summary><p>Toshkent bo‘ylab — bepul, eshigingizgacha. Viloyatlarga yetkazish haqida Telegram’da so‘rang.</p></details>
+        <details><summary>To‘lov qanday qilinadi?</summary><p>Telegram’da yozganingizdan so‘ng menejer to‘lov usuli va yetkazish vaqtini aytadi.</p></details>
+        <details><summary>Pul qaytarish qanday ishlaydi?</summary><p>28 kunlik dasturni bajarib, natija ko‘rmasangiz — pulingiz to‘liq qaytariladi. Batafsil shartlarni Telegram’da aytamiz.</p></details>
+      </div>
+      <a class="cta rv" id="final-cta" data-tg href="https://t.me/saraaafit" style="margin-top:10px">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg>
+        <span class="lbl">Savolim bor — yozish</span>
+      </a>
+    </section>
+
+    <footer>© 2026 Sara · @saraaafit · Natija har kimda turlicha</footer>
+  </main>
+
+  <div class="dock" id="dock">
+    <div class="dock-p"><b>399 000</b><small>−50% · <span data-spots>17</span> joy</small></div>
+    <a class="cta" data-tg href="https://t.me/saraaafit">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg>
+      <span class="lbl">Telegram’da yozish</span>
+    </a>
+  </div>
+
+  <script>
+    (function () {
+      // ─── Sozlamalar — shu yerdan o‘zgartiring ───
+      var CONFIG = {
+        telegram: 'saraaafit',
+        site: 'S3',               // qaysi saytdan kelganini ajratish uchun (promo kodga qo‘shiladi)
+        promoCode: 'SARA399',
+        message: 'Assalomu alaykum! 👋\n' +
+                 'Saytdan yozyapman — Sara box + umrbod ilovani 399 000 so‘mga band qilmoqchiman.\n' +
+                 'To‘lov va yetkazib berish qanday bo‘ladi?\n' +
+                 '{quiz}\n' +
+                 'Promo kod: {code}',
+        totalSpots: 30,
+        spotsLeft: 17,            // qolgan joylar — qo‘lda yangilang
+        fastOpen: true,           // telefonda Telegram ilovasini to‘g‘ridan-to‘g‘ri ochish (t.me sahifasisiz)
+        metaPixelId: ''           // masalan '1234567890'
+      };
+
+      // ─── Telegram ───
+      function promoCode() {
+        var tag = '';
+        try {
+          var q = new URLSearchParams(location.search);
+          tag = (q.get('ad') || q.get('utm_content') || '').toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 16);
+        } catch (_) {}
+        return CONFIG.promoCode + '-' + CONFIG.site + (tag ? '-' + tag : '');
+      }
+      var code = promoCode();
+      var quizLine = '';   // test javoblari xabarga qo‘shiladi
+      var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      function message() { return CONFIG.message.replace('{quiz}', quizLine ? '\nTest: ' + quizLine + '\n' : '').replace('{code}', code); }
+      function webUrl(m) { return 'https://t.me/' + CONFIG.telegram + '?text=' + encodeURIComponent(m); }
+      function appUrl(m) { return 'tg://resolve?domain=' + CONFIG.telegram + '&text=' + encodeURIComponent(m); }
+
+      if (CONFIG.metaPixelId) {
+        !function (f, b, e, v, n, t, s) {
+          if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+          if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+          t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', CONFIG.metaPixelId);
+        fbq('track', 'PageView');
+      }
+
+      function openTelegram() {
+        var m = message();
+        try { navigator.clipboard.writeText(m).catch(function () {}); } catch (_) {}
+        if (window.fbq) fbq('track', 'Lead', { content_name: CONFIG.site });
+        setTimeout(function () {
+          if (!(CONFIG.fastOpen && mobile)) { location.href = webUrl(m); return; }
+          var left = false;
+          var onHide = function () { if (document.hidden) left = true; };
+          document.addEventListener('visibilitychange', onHide);
+          location.href = appUrl(m);
+          setTimeout(function () {
+            document.removeEventListener('visibilitychange', onHide);
+            if (!left && !document.hidden) location.href = webUrl(m);
+          }, 1200);
+        }, window.fbq ? 250 : 0);
+      }
+
+      var tgLinks = document.querySelectorAll('[data-tg]');
+      function refreshLinks() { var u = webUrl(message()); tgLinks.forEach(function (a) { a.href = u; }); }
+      tgLinks.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          var lbl = a.querySelector('.lbl'), old = lbl && lbl.textContent;
+          a.classList.add('busy');
+          if (lbl) lbl.textContent = 'Ochilmoqda…';
+          setTimeout(function () { a.classList.remove('busy'); if (lbl) lbl.textContent = old; }, 2500);
+          openTelegram();
+        });
+      });
+      refreshLinks();
+
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ─── Oldin / keyin ───
+      var ba = document.getElementById('ba');
+      var btns = ba.querySelectorAll('.seg button');
+      var auto = null;
+      function show(v) {
+        ba.setAttribute('data-v', v);
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-v') === v)); });
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { clearInterval(auto); auto = 'stop'; show(b.getAttribute('data-v')); }); });
+      function startAuto() {
+        if (reduce || auto) return;
+        auto = setInterval(function () { show(ba.getAttribute('data-v') === 'k' ? 'o' : 'k'); }, 2600);
+        setTimeout(function () { if (auto !== 'stop') show('k'); }, 1200);
+      }
+      show('o');
+
+      // ─── Test ───
+      var quiz = document.getElementById('quiz');
+      var panes = quiz.querySelectorAll('.q-pane');
+      var qDots = quiz.querySelectorAll('.q-dots i');
+      var qStep = document.getElementById('qStep');
+      var answers = [];
+      function goQ(i) {
+        panes.forEach(function (p, j) { p.hidden = j !== i; });
+        qDots.forEach(function (d, j) { d.classList.toggle('on', j <= i); });
+        qStep.textContent = i < 3 ? (i + 1) + ' / 3' : 'Natija';
+      }
+      function buildPlan() {
+        var who = answers[0], since = answers[1], phone = answers[2];
+        var items = [
+          ['1-hafta', 'Har kuni 10 daqiqa: yog‘ → guasha → video mashq. 1-kun suratini oling.'],
+          ['Fokus', phone === '1–2 soat' ? 'Shishni kamaytiruvchi guasha massajiga ko‘proq e’tibor.' : 'Telefon ko‘p — bo‘yin va iyak osti mashqlariga alohida e’tibor.'],
+          ['Temp', since === 'Ko‘p yil' ? 'Dasturni to‘liq 28 kun bajaring, keyin takrorlang — ilova umrbod.' : 'Dasturni to‘liq 28 kun, uzilishsiz bajaring.'],
+          ['28-kun', 'Suratlarni solishtiring. Natija bo‘lmasa — pul qaytadi.']
+        ];
+        document.getElementById('plan').innerHTML = items.map(function (it) { return '<li><b>' + it[0] + '</b><span>' + it[1] + '</span></li>'; }).join('');
+        quizLine = who + ' · baqbaqa: ' + since + ' · telefon: ' + phone;
+        refreshLinks();
+      }
+      quiz.querySelectorAll('.q-opts button').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var i = +b.closest('.q-pane').getAttribute('data-q');
+          b.parentNode.querySelectorAll('button').forEach(function (x) { x.classList.remove('sel'); });
+          b.classList.add('sel');
+          answers[i] = b.getAttribute('data-a');
+          setTimeout(function () {
+            if (i === 2) buildPlan();
+            goQ(i + 1);
+          }, 260);
+        });
+      });
+      document.getElementById('qAgain').addEventListener('click', function () {
+        answers = []; quizLine = ''; refreshLinks();
+        quiz.querySelectorAll('.sel').forEach(function (x) { x.classList.remove('sel'); });
+        goQ(0);
+      });
+
+      // ─── Ritual demo taymer (10 daqiqa → 10 soniya) ───
+      var PH = [
+        { m: 1, t: '<b>Yog‘.</b> Yuz, iyak osti va bo‘yinga bir necha tomchi.' },
+        { m: 4, t: '<b>Guasha.</b> Iyakdan quloqqa, bo‘yindan pastga — yumshoq.' },
+        { m: 5, t: '<b>Mashq.</b> Ilovadagi kunlik video bilan takrorlang.' }
+      ];
+      var tmTime = document.getElementById('tmTime'), tmPhase = document.getElementById('tmPhase'), tmPlay = document.getElementById('tmPlay');
+      var tmBars = document.querySelectorAll('.tm-bar i');
+      var running = false;
+      tmPlay.addEventListener('click', function () {
+        if (running) return;
+        running = true; tmPlay.querySelector('span').textContent = 'Ketyapti…';
+        tmBars.forEach(function (b) { b.style.width = '0'; });
+        var total = 10000, t0 = null, last = -1;
+        function step(t) {
+          if (t0 === null) t0 = t;
+          var el = Math.min(t - t0, total);
+          var minutes = el / 1000;                       // 1 soniya = 1 daqiqa
+          var left = 600 - Math.round(minutes * 60);
+          tmTime.textContent = Math.floor(left / 60) + ':' + ('0' + (left % 60)).slice(-2);
+          var acc = 0;
+          for (var i = 0; i < 3; i++) {
+            var p = Math.max(0, Math.min(1, (minutes - acc) / PH[i].m));
+            tmBars[i].style.width = (p * 100) + '%';
+            if (minutes >= acc && minutes < acc + PH[i].m && last !== i) { last = i; tmPhase.innerHTML = PH[i].t; }
+            acc += PH[i].m;
+          }
+          if (el < total) requestAnimationFrame(step);
+          else { running = false; tmPhase.innerHTML = '<b>Tayyor ✓</b> Kunlik ritual shu — atigi 10 daqiqa.'; tmPlay.querySelector('span').textContent = 'Qayta'; }
+        }
+        requestAnimationFrame(step);
+      });
+
+      // ─── Haftalar ───
+      var wkRail = document.getElementById('wkRail'), wkDots = document.querySelectorAll('#wkDots i');
+      wkRail.addEventListener('scroll', function () {
+        var w = wkRail.firstElementChild.getBoundingClientRect().width + 8;
+        var i = Math.min(wkDots.length - 1, Math.round(wkRail.scrollLeft / w));
+        wkDots.forEach(function (d, j) { d.classList.toggle('on', j === i); });
+      }, { passive: true });
+
+      // ─── Joylar ───
+      document.querySelectorAll('[data-spots]').forEach(function (el) { el.textContent = CONFIG.spotsLeft; });
+      var grid = document.getElementById('grid30');
+      var taken = CONFIG.totalSpots - CONFIG.spotsLeft;
+      for (var i = 0; i < CONFIG.totalSpots; i++) {
+        var d = document.createElement('i');
+        d.style.transitionDelay = (i * 0.03) + 's';
+        grid.appendChild(d);
+      }
+      function fillSeats() { Array.prototype.forEach.call(grid.children, function (d, i) { if (i < taken) d.classList.add('on'); }); }
+
+      // ─── Tab-menyu: joriy bo‘limni belgilash ───
+      var tabLinks = document.querySelectorAll('#tabs a');
+      var tabNav = document.getElementById('tabs');
+      function setTab(id) {
+        tabLinks.forEach(function (a) {
+          var on = a.getAttribute('href') === '#' + id;
+          a.classList.toggle('on', on);
+          if (on) tabNav.scrollTo({ left: a.offsetLeft - 12, behavior: 'smooth' });
+        });
+      }
+      tabLinks.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var t = document.querySelector(a.getAttribute('href'));
+          if (!t) return;
+          e.preventDefault();
+          scrollTo({ top: t.getBoundingClientRect().top + scrollY - 58, behavior: reduce ? 'auto' : 'smooth' });
+        });
+      });
+      if ('IntersectionObserver' in window) {
+        var so = new IntersectionObserver(function (en) {
+          en.forEach(function (e) { if (e.isIntersecting) setTab(e.target.id); });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        document.querySelectorAll('.grp').forEach(function (g) { so.observe(g); });
+      }
+
+      // ─── Scroll animatsiyalari ───
+      var els = document.querySelectorAll('.rv');
+      function onIn(el) {
+        el.classList.add('in');
+        if (el === ba) startAuto();
+        if (el.id === 'seats-t') setTimeout(fillSeats, 250);
+      }
+      if ('IntersectionObserver' in window && !reduce) {
+        var ro = new IntersectionObserver(function (en) {
+          en.forEach(function (e) { if (e.isIntersecting) { onIn(e.target); ro.unobserve(e.target); } });
+        }, { threshold: 0.15 });
+        els.forEach(function (el) { ro.observe(el); });
+      } else {
+        els.forEach(onIn);
+      }
+
+      // ─── Pastki panel ───
+      var dock = document.getElementById('dock');
+      var watched = [document.getElementById('main-cta'), document.getElementById('final-cta')];
+      var vis = new Set();
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (en) {
+          en.forEach(function (e) { e.isIntersecting ? vis.add(e.target) : vis.delete(e.target); });
+          dock.classList.toggle('show', vis.size === 0);
+        });
+        watched.forEach(function (el) { io.observe(el); });
+      } else dock.classList.add('show');
+    })();
+  </script>
+</body>
+</html>

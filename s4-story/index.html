@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sara — 28 kunlik natija</title>
+  <meta name="description" content="Sara box + umrbod ilova — 399 000 so‘m. Toshkentda yetkazish bepul. Natija bo‘lmasa, pul qaytariladi.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sara — −50%, faqat 30 kishi uchun">
+  <meta property="og:description" content="Sara box + umrbod ilova — 399 000 so‘m.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/oldin.jpg">
+  <link rel="preload" as="image" href="assets/keyin.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --lav: #A895EC;
+      --lav-2: #6F59C2;
+      --tg: #2AABEE;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    html, body { height: 100%; }
+    body {
+      background: #000; color: #fff;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%;
+      overflow: hidden; overscroll-behavior: none;
+      display: grid; place-items: center;
+    }
+    img { display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .story {
+      position: relative; overflow: hidden; isolation: isolate;
+      width: 100%; height: 100vh; height: 100dvh;
+      background: #0C0A12; user-select: none; -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    @media (min-width: 520px) {
+      body { background: radial-gradient(60% 60% at 50% 40%, #2A2140, #07060A); }
+      .story { width: 420px; height: min(100dvh - 40px, 860px); border-radius: 28px; box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6); }
+    }
+
+    /* Slides */
+    .slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 0.45s ease, visibility 0.45s; }
+    .slide.on { opacity: 1; visibility: visible; }
+    .slide .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); }
+    .slide.on .bg { animation: kb 6s ease-out forwards; }
+    .slide::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, transparent 22%, transparent 48%, rgba(0, 0, 0, 0.8) 100%); }
+    .s-body { position: absolute; z-index: 2; left: 0; right: 0; bottom: calc(120px + env(safe-area-inset-bottom)); padding: 0 22px; }
+    .s-center { position: absolute; z-index: 2; inset: 90px 22px calc(130px + env(safe-area-inset-bottom)); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 12px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 8px 13px; border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.22);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    }
+    .pill.g { background: #fff; color: #17141F; border-color: transparent; }
+    .h { margin-top: 12px; font-family: var(--serif); font-weight: 700; font-size: clamp(44px, 13vw, 58px); line-height: 1; letter-spacing: -0.01em; text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35); }
+    .h em { font-style: italic; font-weight: 600; color: var(--lav); }
+    .sub { margin-top: 8px; font-size: 15px; font-weight: 500; color: rgba(255, 255, 255, 0.75); }
+    .tiny { margin-top: 10px; font-size: 11px; color: rgba(255, 255, 255, 0.5); }
+
+    /* Appear animation for content on active slide */
+    .slide [data-a] { opacity: 0; transform: translateY(18px); }
+    .slide.on [data-a] { animation: up 0.7s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 0.12s + 0.15s); }
+
+    /* Circle highlight on slide 1 */
+    .mark-ring { position: absolute; z-index: 2; left: 14%; top: 48%; width: 72%; height: 22%; border: 2.5px dashed rgba(255, 107, 107, 0.95); border-radius: 50%; opacity: 0; }
+    .slide.on .mark-ring { animation: ringIn 0.6s var(--ease) 0.6s forwards, ringP 2s ease-in-out 1.2s infinite; }
+
+    /* Slide 3 — box */
+    .s3 { background: radial-gradient(90% 60% at 50% 35%, #8F7AD9 0%, #4D3A97 50%, #1A1430 100%); }
+    .s3::after { background: none; }
+    .orbs { position: relative; width: 280px; height: 280px; }
+    .orb {
+      position: absolute; display: grid; place-items: center; text-align: center;
+      border-radius: 50%; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.25);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(20, 10, 50, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    .orb span { display: block; margin-top: 6px; font-size: 12.5px; font-weight: 700; }
+    .orb sup { position: absolute; top: 10%; right: 10%; font-size: 12px; font-weight: 800; padding: 4px 7px; border-radius: 8px; background: #fff; color: #4D3A97; }
+    .orb.a { width: 150px; height: 150px; left: 65px; top: 0; }
+    .orb.b { width: 120px; height: 120px; left: 0; top: 150px; }
+    .orb.c { width: 120px; height: 120px; right: 0; top: 150px; }
+    .slide.on .orb { animation: up 0.7s var(--ease) both, float 5s ease-in-out infinite; }
+    .slide.on .orb.a { animation-delay: 0.1s, 0.8s; }
+    .slide.on .orb.b { animation-delay: 0.22s, 1.4s; }
+    .slide.on .orb.c { animation-delay: 0.34s, 2s; }
+    .free { margin-top: 26px; }
+
+    /* Slide 4 — price */
+    .s4 { background: radial-gradient(80% 50% at 50% 40%, #2C2245, #0C0A12 70%); }
+    .s4::after { background: none; }
+    .was { font-size: 22px; font-weight: 600; color: rgba(255, 255, 255, 0.45); text-decoration: line-through; text-decoration-color: #FF5C7A; text-decoration-thickness: 3px; }
+    .now { font-variant-numeric: lining-nums; margin-top: 4px; font-family: var(--serif); font-weight: 700; font-size: clamp(64px, 20vw, 88px); line-height: 1; letter-spacing: -0.02em; }
+    .cur { font-size: 18px; font-weight: 700; color: rgba(255, 255, 255, 0.7); letter-spacing: 0.1em; text-transform: uppercase; }
+    .sticker {
+      position: absolute; top: 18%; right: 8%;
+      width: 108px; height: 108px; border-radius: 50%; display: grid; place-items: center;
+      font-weight: 800; font-size: 26px; color: #fff; transform: rotate(14deg);
+      background: linear-gradient(135deg, #FF7A59, #FF3D6E); box-shadow: 0 16px 40px rgba(255, 61, 110, 0.45);
+      opacity: 0;
+    }
+    .slide.on .sticker { animation: stamp 0.6s var(--ease) 1.4s forwards; }
+
+    /* Slide 5 — guarantee */
+    .s5 { background: radial-gradient(80% 50% at 50% 38%, #3B2D6B, #0C0A12 72%); }
+    .s5::after { background: none; }
+    .seal { position: relative; width: 170px; height: 170px; display: grid; place-items: center; }
+    .seal svg { position: absolute; inset: 0; animation: spin 20s linear infinite; }
+    .seal b { width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 32px; background: linear-gradient(140deg, var(--lav), var(--lav-2)); box-shadow: 0 20px 50px rgba(111, 89, 194, 0.5); }
+    .spots { width: 100%; max-width: 280px; margin-top: 22px; }
+    .spots-row { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255, 255, 255, 0.7); }
+    .spots-row b { color: #fff; }
+    .bar { margin-top: 8px; height: 6px; border-radius: 99px; background: rgba(255, 255, 255, 0.15); overflow: hidden; }
+    .bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, #FF7A59, #FF3D6E); transition: width 1.2s var(--ease) 0.5s; }
+
+    /* Top chrome */
+    .chrome { position: absolute; z-index: 10; top: 0; left: 0; right: 0; padding: calc(10px + env(safe-area-inset-top)) 10px 0; pointer-events: none; }
+    .prog { display: flex; gap: 4px; }
+    .prog span { flex: 1; height: 2.5px; border-radius: 3px; background: rgba(255, 255, 255, 0.3); overflow: hidden; }
+    .prog span i { display: block; height: 100%; width: 0; background: #fff; }
+    .prog span.done i { width: 100%; }
+    .who { display: flex; align-items: center; gap: 9px; margin-top: 10px; padding: 0 2px; }
+    .ava { width: 34px; height: 34px; border-radius: 50%; padding: 2px; background: conic-gradient(from 200deg, #FF7A59, #FF3D6E, var(--lav), #FF7A59); }
+    .ava img { width: 100%; height: 100%; border-radius: 50%; object-fit: contain; background: #fff; padding: 4px; border: 2px solid #0C0A12; }
+    .who b { font-size: 14px; font-weight: 700; }
+    .who small { font-size: 13px; color: rgba(255, 255, 255, 0.65); margin-left: 4px; }
+    .who .badge { margin-left: auto; font-size: 11px; font-weight: 800; padding: 5px 9px; border-radius: 99px; background: #FF3D6E; }
+
+    /* Tap zones */
+    .tap { position: absolute; z-index: 5; top: 70px; bottom: calc(110px + env(safe-area-inset-bottom)); width: 34%; background: none; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .tap.l { left: 0; }
+    .tap.r { right: 0; width: 66%; }
+    .tap:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.6); outline-offset: -6px; }
+
+    /* Bottom CTA */
+    .bottom { position: absolute; z-index: 10; left: 0; right: 0; bottom: 0; padding: 0 14px calc(16px + env(safe-area-inset-bottom)); }
+    .swipe { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-bottom: 8px; font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.8); animation: bob 1.6s ease-in-out infinite; }
+    .cta {
+      position: relative; overflow: hidden; isolation: isolate;
+      display: flex; align-items: center; gap: 12px;
+      width: 100%; padding: 8px 8px 8px 8px; border-radius: 999px;
+      background: #fff; color: #17141F; font-weight: 800; font-size: 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+      cursor: pointer; -webkit-tap-highlight-color: transparent; transition: transform 0.15s;
+    }
+    .cta::before { content: ''; position: absolute; z-index: -1; top: 0; bottom: 0; left: 0; width: 30%; background: linear-gradient(90deg, transparent, rgba(168, 149, 236, 0.35), transparent); animation: shine 3s ease-in-out infinite; }
+    .cta:active { transform: scale(0.98); }
+    .cta:focus-visible { outline: 3px solid var(--lav); outline-offset: 3px; }
+    .cta .tgi { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--tg); color: #fff; animation: ring 2.2s var(--ease) infinite; }
+    .cta .lbl { flex: 1; line-height: 1.15; }
+    .cta .lbl small { display: block; font-size: 12px; font-weight: 600; color: #7A7390; }
+    .cta .arr { flex: none; width: 38px; height: 38px; margin-right: 4px; border-radius: 50%; display: grid; place-items: center; background: #F0ECFA; color: var(--lav-2); }
+    .cta.busy { opacity: 0.85; pointer-events: none; }
+
+    @keyframes kb { from { transform: scale(1.12); } to { transform: scale(1); } }
+    @keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    @keyframes ringIn { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: none; } }
+    @keyframes ringP { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+    @keyframes stamp { 0% { opacity: 0; transform: rotate(14deg) scale(2.2); } 70% { opacity: 1; transform: rotate(14deg) scale(0.92); } 100% { opacity: 1; transform: rotate(14deg) scale(1); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    @keyframes shine { 0% { transform: translateX(-120%) skewX(-18deg); } 55%, 100% { transform: translateX(380%) skewX(-18deg); } }
+    @keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(42, 171, 238, 0.55); } 70%, 100% { box-shadow: 0 0 0 11px rgba(42, 171, 238, 0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="story" id="story" aria-roledescription="hikoya">
+    <!-- 1 -->
+    <section class="slide" aria-label="1-slayd: oldin">
+      <img class="bg" src="assets/oldin.jpg" alt="Saraaa’dan oldin: baqbaqa ko‘rinadi" width="640" height="640">
+      <span class="mark-ring" aria-hidden="true"></span>
+      <div class="s-body">
+        <span class="pill" data-a>Oldin</span>
+        <h1 class="h" data-a style="--i:1">Baqbaqa?</h1>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide" aria-label="2-slayd: keyin">
+      <img class="bg" src="assets/keyin.jpg" alt="Saraaa’dan keyin: jag‘ chizig‘i aniqroq" width="640" height="640">
+      <div class="s-body">
+        <span class="pill g" data-a>28 kundan keyin ✓</span>
+        <h2 class="h" data-a style="--i:1">Aniq <em>jag‘</em></h2>
+        <p class="sub" data-a style="--i:2">Kuniga 10 daqiqa · uyda</p>
+        <p class="tiny" data-a style="--i:3">Natija har kimda turlicha</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide s3" aria-label="3-slayd: Sara box">
+      <div class="s-center">
+        <span class="pill" data-a>Sara box</span>
+        <div class="orbs" style="margin-top:26px">
+          <div class="orb a"><div><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg><span>Ilova</span></div><sup>∞</sup></div>
+          <div class="orb b"><div><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5C3 8.4 6.4 5 10.5 5h3C17.6 5 21 8.4 21 12.5c0 1.7-1.3 3-3 3-1.1 0-2.1-.6-2.6-1.6-.7-1.3-2-2.2-3.4-2.2s-2.7.9-3.4 2.2c-.5 1-1.5 1.6-2.6 1.6-1.7 0-3-1.3-3-3z"/></svg><span>Guasha</span></div><sup>×2</sup></div>
+          <div class="orb c"><div><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6V4.5a2 2 0 0 1 4 0V6"/><rect x="9" y="6" width="6" height="3" rx="1"/><rect x="6.5" y="9" width="11" height="12.5" rx="3"/><path d="M12 13c-1 1.3-1.6 2.1-1.6 2.9a1.6 1.6 0 0 0 3.2 0c0-.8-.6-1.6-1.6-2.9z"/></svg><span>Yuz yog‘i</span></div></div>
+        </div>
+        <span class="pill free" data-a style="--i:4">🚚 Toshkentda bepul</span>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide s4" aria-label="4-slayd: narx">
+      <span class="sticker" aria-hidden="true">−50%</span>
+      <div class="s-center">
+        <span class="pill" data-a>Box + umrbod ilova</span>
+        <p class="was" data-a style="--i:1;margin-top:26px">798 000</p>
+        <p class="now" data-a style="--i:2" id="price">399 000</p>
+        <p class="cur" data-a style="--i:3">so‘m</p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide s5" aria-label="5-slayd: kafolat">
+      <div class="s-center">
+        <div class="seal" data-a>
+          <svg viewBox="0 0 170 170" width="170" height="170" aria-hidden="true">
+            <defs><path id="c" d="M85 85 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/></defs>
+            <text font-family="Inter, sans-serif" font-size="12" font-weight="700" letter-spacing="0" fill="rgba(255,255,255,.75)"><textPath href="#c" textLength="462" lengthAdjust="spacing">PUL QAYTARISH KAFOLATI • PUL QAYTARISH KAFOLATI •</textPath></text>
+          </svg>
+          <b>100%</b>
+        </div>
+        <h2 class="h" data-a style="--i:1;font-size:clamp(34px,10vw,44px);margin-top:22px">Natija <em>yoki</em><br>pul qaytadi</h2>
+        <div class="spots" data-a style="--i:2">
+          <div class="spots-row"><span>30 kishi uchun</span><span><b data-spots>17</b> ta qoldi</span></div>
+          <div class="bar"><i id="bar"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="chrome">
+      <div class="prog" id="prog" aria-hidden="true"></div>
+      <div class="who">
+        <span class="ava"><img src="assets/sara-mark.png" alt="" width="263" height="350"></span>
+        <b>saraaafit</b><small>hozir</small>
+        <span class="badge">−50%</span>
+      </div>
+    </div>
+
+    <button class="tap l" type="button" aria-label="Oldingi slayd"></button>
+    <button class="tap r" type="button" aria-label="Keyingi slayd"></button>
+
+    <div class="bottom">
+      <div class="swipe" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+        Telegram’da yozing
+      </div>
+      <a class="cta" data-tg href="https://t.me/saraaafit">
+        <span class="tgi"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg></span>
+        <span class="lbl">Band qilish<small>399 000 so‘m · <span data-spots>17</span> joy</small></span>
+        <span class="arr" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // ─── Sozlamalar — shu yerdan o‘zgartiring ───
+      var CONFIG = {
+        telegram: 'saraaafit',
+        site: 'S4',               // qaysi saytdan kelganini ajratish uchun (promo kodga qo‘shiladi)
+        promoCode: 'SARA399',
+        message: 'Assalomu alaykum! 👋\n' +
+                 'Saytdan yozyapman — Sara box + umrbod ilovani 399 000 so‘mga band qilmoqchiman.\n' +
+                 'To‘lov va yetkazib berish qanday bo‘ladi?\n\n' +
+                 'Promo kod: {code}',
+        totalSpots: 30,
+        spotsLeft: 17,            // qolgan joylar — qo‘lda yangilang
+        slideMs: 3800,            // har bir slayd davomiyligi
+        fastOpen: true,           // telefonda Telegram ilovasini to‘g‘ridan-to‘g‘ri ochish (t.me sahifasisiz)
+        metaPixelId: ''           // masalan '1234567890'
+      };
+
+      // ─── Telegram ───
+      function promoCode() {
+        var tag = '';
+        try {
+          var q = new URLSearchParams(location.search);
+          tag = (q.get('ad') || q.get('utm_content') || '').toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 16);
+        } catch (_) {}
+        return CONFIG.promoCode + '-' + CONFIG.site + (tag ? '-' + tag : '');
+      }
+      var msg = CONFIG.message.replace('{code}', promoCode());
+      var webUrl = 'https://t.me/' + CONFIG.telegram + '?text=' + encodeURIComponent(msg);
+      var appUrl = 'tg://resolve?domain=' + CONFIG.telegram + '&text=' + encodeURIComponent(msg);
+      var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (CONFIG.metaPixelId) {
+        !function (f, b, e, v, n, t, s) {
+          if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+          if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+          t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', CONFIG.metaPixelId);
+        fbq('track', 'PageView');
+      }
+
+      function openTelegram() {
+        try { navigator.clipboard.writeText(msg).catch(function () {}); } catch (_) {}
+        if (window.fbq) fbq('track', 'Lead', { content_name: CONFIG.site });
+        setTimeout(function () {
+          if (!(CONFIG.fastOpen && mobile)) { location.href = webUrl; return; }
+          var left = false;
+          var onHide = function () { if (document.hidden) left = true; };
+          document.addEventListener('visibilitychange', onHide);
+          location.href = appUrl;
+          setTimeout(function () {
+            document.removeEventListener('visibilitychange', onHide);
+            if (!left && !document.hidden) location.href = webUrl;
+          }, 1200);
+        }, window.fbq ? 250 : 0);
+      }
+
+      document.querySelectorAll('[data-tg]').forEach(function (a) {
+        a.href = webUrl;
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          var lbl = a.querySelector('.lbl'), old = lbl && lbl.innerHTML;
+          a.classList.add('busy');
+          if (lbl) lbl.textContent = 'Telegram ochilmoqda…';
+          setTimeout(function () { a.classList.remove('busy'); if (lbl) lbl.innerHTML = old; }, 2500);
+          openTelegram();
+        });
+      });
+
+      document.querySelectorAll('[data-spots]').forEach(function (el) { el.textContent = CONFIG.spotsLeft; });
+
+      // ─── Stories ───
+      var story = document.getElementById('story');
+      var slides = story.querySelectorAll('.slide');
+      var prog = document.getElementById('prog');
+      var n = slides.length, cur = -1, t0 = 0, elapsed = 0, paused = false, raf = null;
+      for (var k = 0; k < n; k++) prog.appendChild(document.createElement('span')).appendChild(document.createElement('i'));
+      var bars = prog.querySelectorAll('span');
+
+      function fmt(v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+      function countPrice() {
+        var el = document.getElementById('price'), from = 798000, to = 399000, ms = 1100, s = null;
+        function step(t) {
+          if (s === null) s = t;
+          var p = Math.min((t - s) / ms, 1), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(Math.round((from + (to - from) * e) / 1000) * 1000);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        el.textContent = fmt(from);
+        setTimeout(function () { requestAnimationFrame(step); }, 450);
+      }
+
+      function go(i) {
+        if (i < 0) i = 0;
+        if (i >= n) i = n - 1;
+        if (cur >= 0) slides[cur].classList.remove('on');
+        cur = i;
+        // re-trigger animations
+        var s = slides[cur];
+        s.classList.remove('on'); void s.offsetWidth; s.classList.add('on');
+        bars.forEach(function (b, j) {
+          b.classList.toggle('done', j < cur);
+          b.firstChild.style.width = j < cur ? '100%' : '0';
+        });
+        if (cur === 3) countPrice();
+        if (cur === 4) setTimeout(function () { document.getElementById('bar').style.width = ((CONFIG.totalSpots - CONFIG.spotsLeft) / CONFIG.totalSpots * 100) + '%'; }, 50);
+        else document.getElementById('bar').style.width = '0';
+        elapsed = 0; t0 = performance.now();
+      }
+
+      function loop(t) {
+        if (!paused) {
+          var p = Math.min((elapsed + t - t0) / CONFIG.slideMs, 1);
+          bars[cur].firstChild.style.width = (p * 100) + '%';
+          if (p >= 1) {
+            if (cur < n - 1) go(cur + 1);
+            else { bars[cur].classList.add('done'); }
+          }
+        }
+        raf = requestAnimationFrame(loop);
+      }
+
+      function pause() { if (paused) return; paused = true; elapsed += performance.now() - t0; }
+      function resume() { if (!paused) return; paused = false; t0 = performance.now(); }
+
+      // Bosib turganda pauza (Instagram kabi)
+      var holdTimer = null, held = false;
+      story.querySelector('.tap.l').addEventListener('click', function () { if (held) { held = false; return; } go(cur - 1); });
+      story.querySelector('.tap.r').addEventListener('click', function () { if (held) { held = false; return; } go(cur === n - 1 ? 0 : cur + 1); });
+      story.querySelectorAll('.tap').forEach(function (b) {
+        b.addEventListener('pointerdown', function () { held = false; holdTimer = setTimeout(function () { held = true; pause(); }, 220); });
+        ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) {
+          b.addEventListener(ev, function () { clearTimeout(holdTimer); if (held) resume(); });
+        });
+      });
+
+      // Yuqoriga surish → Telegram
+      var y0 = null;
+      story.addEventListener('touchstart', function (e) { y0 = e.touches[0].clientY; }, { passive: true });
+      story.addEventListener('touchend', function (e) {
+        if (y0 === null) return;
+        var dy = y0 - e.changedTouches[0].clientY; y0 = null;
+        if (dy > 80) document.querySelector('[data-tg]').click();
+      }, { passive: true });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') go(cur + 1);
+        if (e.key === 'ArrowLeft') go(cur - 1);
+      });
+      document.addEventListener('visibilitychange', function () { document.hidden ? pause() : resume(); });
+
+      go(0);
+      raf = requestAnimationFrame(loop);
+    })();
+  </script>
+</body>
+</html>

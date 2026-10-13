@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sara — sizga xabar bor</title>
+  <meta name="description" content="Sara box + umrbod ilova — 399 000 so‘m. Toshkentda yetkazish bepul. Natija bo‘lmasa, pul qaytariladi.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sara — −50%, faqat 30 kishi uchun">
+  <meta property="og:description" content="Sara box + umrbod ilova — 399 000 so‘m.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/oldin.jpg">
+  <link rel="preload" as="image" href="assets/keyin.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #121018;
+      --mute: #8A8598;
+      --in: #FFFFFF;
+      --out: #EEE9FF;
+      --lav: #8B76D6;
+      --lav-2: #6A54B8;
+      --tg: #2AABEE;
+      --tg-2: #1C8FD0;
+      --ok: #3FBF84;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html, body { height: 100%; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15.5px; line-height: 1.4; color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      background: #D9D2EE;
+      overscroll-behavior: none;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .app {
+      position: relative; display: flex; flex-direction: column;
+      width: 100%; max-width: 480px; height: 100vh; height: 100dvh; margin: 0 auto;
+      background:
+        radial-gradient(120% 70% at 0% 0%, rgba(178, 160, 240, 0.55), transparent 60%),
+        radial-gradient(100% 60% at 100% 100%, rgba(140, 200, 240, 0.4), transparent 60%),
+        linear-gradient(180deg, #E9E3F8, #DCD5F0);
+      overflow: hidden;
+    }
+    .app::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%237A64C6' stroke-opacity='.16' stroke-width='1.4' stroke-linecap='round'%3E%3Cpath d='M18 22c4-6 12-6 16 0'/%3E%3Ccircle cx='86' cy='26' r='6'/%3E%3Cpath d='M60 64l6 6 10-12'/%3E%3Cpath d='M16 92c6 0 6 8 12 8s6-8 12-8'/%3E%3Cpath d='M94 86l4 10 10 0-8 6 3 10-9-6-9 6 3-10-8-6h10z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Header */
+    .hd {
+      position: relative; z-index: 3; flex: none;
+      display: flex; align-items: center; gap: 10px;
+      padding: calc(8px + env(safe-area-inset-top)) 12px 8px;
+      background: rgba(255, 255, 255, 0.82); -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6);
+      border-bottom: 1px solid rgba(18, 16, 24, 0.06);
+    }
+    .back { width: 32px; height: 32px; display: grid; place-items: center; color: var(--tg-2); }
+    .ava { position: relative; width: 42px; height: 42px; flex: none; border-radius: 50%; background: linear-gradient(140deg, #B8A7F2, var(--lav-2)); display: grid; place-items: center; }
+    .ava img { width: 24px; filter: brightness(0) invert(1); }
+    .ava::after { content: ''; position: absolute; right: 0; bottom: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--ok); border: 2px solid #fff; }
+    .who { flex: 1; min-width: 0; line-height: 1.2; }
+    .who b { display: flex; align-items: center; gap: 5px; font-size: 16px; font-weight: 700; }
+    .who b svg { color: var(--tg); }
+    .who small { display: block; font-size: 13px; color: var(--tg-2); }
+    .hd .tag { font-size: 11.5px; font-weight: 800; padding: 6px 10px; border-radius: 99px; color: #fff; background: linear-gradient(135deg, #FF7A59, #FF3D6E); }
+
+    /* Feed */
+    .feed {
+      position: relative; z-index: 1; flex: 1; min-height: 0;
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
+      padding: 14px 10px 10px; display: flex; flex-direction: column; gap: 6px;
+      scroll-behavior: smooth;
+    }
+    .feed > * { flex-shrink: 0; }
+    .day { align-self: center; margin: 2px 0 8px; font-size: 12.5px; font-weight: 600; color: #fff; padding: 4px 11px; border-radius: 99px; background: rgba(60, 46, 110, 0.35); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+
+    .msg {
+      position: relative; max-width: 84%; align-self: flex-start;
+      padding: 8px 12px 6px; border-radius: 18px 18px 18px 6px;
+      background: var(--in); box-shadow: 0 1px 1.5px rgba(30, 20, 60, 0.12);
+      animation: pop 0.4s var(--ease) both; transform-origin: 0 100%;
+    }
+    .msg .t { display: inline-flex; align-items: center; gap: 3px; float: right; margin: 6px 0 -2px 10px; font-size: 11.5px; color: var(--mute); }
+    .msg p { display: inline; }
+    .msg b { font-weight: 700; }
+    .msg.big { font-size: 34px; line-height: 1.1; padding: 4px 6px; background: none; box-shadow: none; }
+
+    /* Photo message */
+    .msg.photo { padding: 3px; width: 84%; }
+    .ph { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border-radius: 15px 15px 4px 4px; overflow: hidden; }
+    .ph figure { position: relative; aspect-ratio: 3 / 4; background: #ddd; }
+    .ph img { width: 100%; height: 100%; object-fit: cover; }
+    .ph figcaption { position: absolute; left: 8px; bottom: 8px; font-size: 11px; font-weight: 700; color: #fff; padding: 4px 8px; border-radius: 99px; background: rgba(0, 0, 0, 0.45); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .ph figure:last-child figcaption { background: var(--ok); }
+    .msg.photo .cap { padding: 7px 9px 4px; }
+    .msg.photo .cap small { display: block; font-size: 11px; color: var(--mute); margin-top: 2px; }
+
+    /* Product card */
+    .msg.card { padding: 0; width: 84%; overflow: hidden; }
+    .card-top {
+      position: relative; padding: 14px 14px 12px; color: #fff;
+      background: radial-gradient(90% 90% at 100% 0%, rgba(184, 167, 242, 0.65), transparent 60%), linear-gradient(150deg, #2A2142, #15111F);
+    }
+    .card-top .nm { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255, 255, 255, 0.65); }
+    .card-top s { display: block; margin-top: 8px; font-size: 13.5px; color: rgba(255, 255, 255, 0.5); text-decoration-color: #FF5C7A; text-decoration-thickness: 2px; }
+    .card-top .pr { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+    .card-top .pr small { font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.7); }
+    .card-top .off { position: absolute; top: 14px; right: 14px; font-size: 13px; font-weight: 800; padding: 5px 10px; border-radius: 99px; background: linear-gradient(135deg, #FF7A59, #FF3D6E); }
+    .card-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 10px; }
+    .card-list li { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 12px; background: #F5F2FC; font-size: 13px; font-weight: 600; }
+    .card-list .ic { width: 30px; height: 30px; flex: none; border-radius: 9px; display: grid; place-items: center; color: var(--lav-2); background: #fff; }
+    .msg.card .t { margin: 0 10px 6px; }
+
+    /* Spots message */
+    .seats { display: grid; grid-template-columns: repeat(15, 1fr); gap: 3px; margin: 8px 0 2px; }
+    .seats i { aspect-ratio: 1; border-radius: 3px; background: #E9E4F7; }
+    .seats i.on { background: var(--ink); }
+
+    /* Inline keyboard */
+    .kb { align-self: flex-start; width: 84%; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; animation: pop 0.4s var(--ease) both; }
+    .kb a {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 11px 8px; border-radius: 12px; font-size: 14px; font-weight: 600; color: #fff;
+      background: rgba(60, 46, 110, 0.42); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      -webkit-tap-highlight-color: transparent; transition: transform 0.15s, background 0.2s;
+    }
+    .kb a:first-child { grid-column: span 2; background: linear-gradient(180deg, #3CB8F4, var(--tg-2)); box-shadow: 0 8px 20px rgba(28, 143, 208, 0.35); animation: glow 2.2s var(--ease) infinite; }
+    .kb a:active { transform: scale(0.97); }
+
+    /* Typing */
+    .typing { align-self: flex-start; display: inline-flex; gap: 4px; padding: 12px 14px; border-radius: 18px 18px 18px 6px; background: var(--in); box-shadow: 0 1px 1.5px rgba(30, 20, 60, 0.12); animation: pop 0.3s var(--ease) both; }
+    .typing i { width: 7px; height: 7px; border-radius: 50%; background: #B6AECB; animation: dot 1.1s ease-in-out infinite; }
+    .typing i:nth-child(2) { animation-delay: 0.15s; }
+    .typing i:nth-child(3) { animation-delay: 0.3s; }
+
+    /* Composer */
+    .cmp {
+      position: relative; z-index: 3; flex: none;
+      padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+      background: rgba(255, 255, 255, 0.86); -webkit-backdrop-filter: blur(20px) saturate(1.6); backdrop-filter: blur(20px) saturate(1.6);
+      border-top: 1px solid rgba(18, 16, 24, 0.06);
+    }
+    .hint { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 7px; font-size: 12px; font-weight: 600; color: var(--lav-2); }
+    .hint svg { animation: bob 1.4s ease-in-out infinite; }
+    .row { display: flex; align-items: flex-end; gap: 8px; }
+    .field {
+      flex: 1; min-width: 0; display: block; padding: 10px 14px; border-radius: 22px;
+      background: #F3F1F8; border: 1px solid rgba(18, 16, 24, 0.06);
+      font-size: 14.5px; line-height: 1.35; color: var(--ink);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .field .caret { display: inline-block; width: 1.5px; height: 1.1em; margin-left: 1px; vertical-align: -2px; background: var(--tg); animation: caret 1s steps(1) infinite; }
+    .send {
+      flex: none; position: relative; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+      color: #fff; background: linear-gradient(180deg, #3CB8F4, var(--tg-2));
+      box-shadow: 0 8px 20px rgba(28, 143, 208, 0.4);
+      animation: glow 2.2s var(--ease) infinite; transition: transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .send:active { transform: scale(0.92); }
+    .send:focus-visible, .kb a:focus-visible, .field:focus-visible { outline: 3px solid var(--lav); outline-offset: 2px; }
+    .busy { opacity: 0.8; pointer-events: none; }
+
+    .note { text-align: center; font-size: 10.5px; color: rgba(60, 46, 110, 0.55); margin-top: 4px; }
+
+    @keyframes pop { from { opacity: 0; transform: translateY(8px) scale(0.96); } to { opacity: 1; transform: none; } }
+    @keyframes dot { 0%, 60%, 100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-4px); opacity: 1; } }
+    @keyframes caret { 50% { opacity: 0; } }
+    @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(3px); } }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 8px 20px rgba(28, 143, 208, 0.35), 0 0 0 0 rgba(42, 171, 238, 0.5); }
+      60% { box-shadow: 0 8px 20px rgba(28, 143, 208, 0.35), 0 0 0 10px rgba(42, 171, 238, 0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="hd">
+      <span class="back" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></span>
+      <span class="ava"><img src="assets/sara-mark.png" alt="" width="263" height="350"></span>
+      <div class="who">
+        <b>Sara <svg width="15" height="15" viewBox="0 0 24 24" aria-label="tasdiqlangan"><path fill="currentColor" d="M12 1.5l2.6 2 3.2-.3 1 3.1 2.8 1.6-.9 3.1.9 3.1-2.8 1.6-1 3.1-3.2-.3-2.6 2-2.6-2-3.2.3-1-3.1L2.4 14l.9-3.1L2.4 7.9l2.8-1.6 1-3.1 3.2.3z"/><path d="M8 12.3l2.6 2.6L16.2 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></b>
+        <small id="status">online</small>
+      </div>
+      <span class="tag">−50%</span>
+    </header>
+
+    <main class="feed" id="feed" aria-live="polite">
+      <span class="day">Bugun</span>
+    </main>
+
+    <footer class="cmp">
+      <div class="hint"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Xabar tayyor — yuboring</div>
+      <div class="row">
+        <a class="field" data-tg href="https://t.me/saraaafit" aria-label="Tayyor xabarni Telegram’da yuborish"><span id="draft">Assalomu alaykum! Sara box’ni band qilmoqchiman</span><span class="caret" aria-hidden="true"></span></a>
+        <a class="send" data-tg href="https://t.me/saraaafit" aria-label="Telegram’da yuborish">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg>
+        </a>
+      </div>
+      <p class="note">Natija har kimda turlicha · © 2026 Sara</p>
+    </footer>
+  </div>
+
+  <!-- Chatdagi xabarlar (ketma-ket chiqadi) -->
+  <template id="m1"><div class="msg"><p>Assalomu alaykum! 👋</p><span class="t">{t}</span></div></template>
+  <template id="m2">
+    <div class="msg photo">
+      <div class="ph">
+        <figure><img src="assets/oldin.jpg" alt="Saraaa’dan oldin: baqbaqa ko‘rinadi" width="640" height="640"><figcaption>Oldin</figcaption></figure>
+        <figure><img src="assets/keyin.jpg" alt="Saraaa’dan keyin: jag‘ chizig‘i aniqroq" width="640" height="640"><figcaption>28 kun ✓</figcaption></figure>
+      </div>
+      <div class="cap"><p><b>Baqbaqa → aniq jag‘</b></p><span class="t">{t}</span><small>Kuniga 10 daqiqa · uyda</small></div>
+    </div>
+  </template>
+  <template id="m3">
+    <div class="msg card">
+      <div class="card-top">
+        <span class="nm">Sara box + ilova</span>
+        <span class="off">−50%</span>
+        <s>798 000 so‘m</s>
+        <div class="pr">399 000 <small>so‘m</small></div>
+      </div>
+      <ul class="card-list">
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12.5C3 8.4 6.4 5 10.5 5h3C17.6 5 21 8.4 21 12.5c0 1.7-1.3 3-3 3-1.1 0-2.1-.6-2.6-1.6-.7-1.3-2-2.2-3.4-2.2s-2.7.9-3.4 2.2c-.5 1-1.5 1.6-2.6 1.6-1.7 0-3-1.3-3-3z"/></svg></span>2 guasha</li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6V4.5a2 2 0 0 1 4 0V6"/><rect x="9" y="6" width="6" height="3" rx="1"/><rect x="6.5" y="9" width="11" height="12.5" rx="3"/></svg></span>Yuz yog‘i</li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg></span>Ilova ∞</li>
+        <li><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v9H3z"/><path d="M14 10h3.6a1 1 0 0 1 .8.4l2.4 3.2a1 1 0 0 1 .2.6V16h-7"/><circle cx="7" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></svg></span>Bepul</li>
+      </ul>
+      <span class="t">{t}</span>
+    </div>
+  </template>
+  <template id="m4"><div class="msg"><p>🛡 Natija bo‘lmasa — <b>pul 100% qaytadi</b></p><span class="t">{t}</span></div></template>
+  <template id="m5">
+    <div class="msg">
+      <p>🔥 30 kishi uchun · <b><span data-spots>17</span> ta joy</b> qoldi</p>
+      <div class="seats" data-seats aria-hidden="true"></div>
+      <span class="t">{t}</span>
+    </div>
+  </template>
+  <template id="m6">
+    <div class="kb">
+      <a data-tg href="https://t.me/saraaafit">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.94 4.3 18.7 19.6c-.24 1.08-.88 1.35-1.79.84l-4.94-3.64-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.17 13.2 1.3 11.68c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z"/></svg>
+        Band qilish · 399 000
+      </a>
+      <a data-tg data-intent="ask" href="https://t.me/saraaafit">💬 Savol berish</a>
+      <a data-tg data-intent="pay" href="https://t.me/saraaafit">💳 To‘lov qanday?</a>
+    </div>
+  </template>
+
+  <script>
+    (function () {
+      // ─── Sozlamalar — shu yerdan o‘zgartiring ───
+      var CONFIG = {
+        telegram: 'saraaafit',
+        site: 'S5',               // qaysi saytdan kelganini ajratish uchun (promo kodga qo‘shiladi)
+        promoCode: 'SARA399',
+        message: 'Assalomu alaykum! 👋\n' +
+                 'Saytdan yozyapman — Sara box + umrbod ilovani 399 000 so‘mga band qilmoqchiman.\n' +
+                 'To‘lov va yetkazib berish qanday bo‘ladi?\n\n' +
+                 'Promo kod: {code}',
+        // Inline tugmalar uchun boshqa tayyor xabarlar
+        messages: {
+          ask: 'Assalomu alaykum! 👋\nSaytdan yozyapman — Sara box haqida savolim bor.\n\nPromo kod: {code}',
+          pay: 'Assalomu alaykum! 👋\nSaytdan yozyapman — Sara box (399 000 so‘m) uchun to‘lov va yetkazib berish qanday bo‘ladi?\n\nPromo kod: {code}'
+        },
+        totalSpots: 30,
+        spotsLeft: 17,            // qolgan joylar — qo‘lda yangilang
+        fastOpen: true,           // telefonda Telegram ilovasini to‘g‘ridan-to‘g‘ri ochish (t.me sahifasisiz)
+        metaPixelId: ''           // masalan '1234567890'
+      };
+
+      // ─── Telegram ───
+      function promoCode() {
+        var tag = '';
+        try {
+          var q = new URLSearchParams(location.search);
+          tag = (q.get('ad') || q.get('utm_content') || '').toUpperCase().replace(/[^A-Z0-9_-]/g, '').slice(0, 16);
+        } catch (_) {}
+        return CONFIG.promoCode + '-' + CONFIG.site + (tag ? '-' + tag : '');
+      }
+      var code = promoCode();
+      var mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      function textFor(intent) { return ((intent && CONFIG.messages[intent]) || CONFIG.message).replace('{code}', code); }
+      function webUrl(m) { return 'https://t.me/' + CONFIG.telegram + '?text=' + encodeURIComponent(m); }
+      function appUrl(m) { return 'tg://resolve?domain=' + CONFIG.telegram + '&text=' + encodeURIComponent(m); }
+
+      if (CONFIG.metaPixelId) {
+        !function (f, b, e, v, n, t, s) {
+          if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+          if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+          t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', CONFIG.metaPixelId);
+        fbq('track', 'PageView');
+      }
+
+      function openTelegram(m) {
+        try { navigator.clipboard.writeText(m).catch(function () {}); } catch (_) {}
+        if (window.fbq) fbq('track', 'Lead', { content_name: CONFIG.site });
+        setTimeout(function () {
+          if (!(CONFIG.fastOpen && mobile)) { location.href = webUrl(m); return; }
+          var left = false;
+          var onHide = function () { if (document.hidden) left = true; };
+          document.addEventListener('visibilitychange', onHide);
+          location.href = appUrl(m);
+          setTimeout(function () {
+            document.removeEventListener('visibilitychange', onHide);
+            if (!left && !document.hidden) location.href = webUrl(m);
+          }, 1200);
+        }, window.fbq ? 250 : 0);
+      }
+
+      function bindTg(root) {
+        root.querySelectorAll('[data-tg]').forEach(function (a) {
+          var m = textFor(a.getAttribute('data-intent'));
+          a.href = webUrl(m);
+          a.addEventListener('click', function (e) {
+            e.preventDefault();
+            a.classList.add('busy');
+            setTimeout(function () { a.classList.remove('busy'); }, 2500);
+            openTelegram(m);
+          });
+        });
+      }
+      bindTg(document);
+
+      // ─── Chat ketma-ketligi ───
+      var feed = document.getElementById('feed');
+      var status = document.getElementById('status');
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var now = new Date();
+      var time = ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2);
+      var steps = [
+        { id: 'm1', type: 500 },
+        { id: 'm2', type: 900 },
+        { id: 'm3', type: 1000 },
+        { id: 'm4', type: 800 },
+        { id: 'm5', type: 700 },
+        { id: 'm6', type: 300 }
+      ];
+
+      function render(id) {
+        var html = document.getElementById(id).innerHTML.replace(/\{t\}/g, time);
+        var box = document.createElement('div');
+        box.innerHTML = html.trim();
+        var el = box.firstElementChild;
+        el.querySelectorAll('[data-spots]').forEach(function (s) { s.textContent = CONFIG.spotsLeft; });
+        var seats = el.querySelector('[data-seats]');
+        if (seats) {
+          for (var i = 0; i < CONFIG.totalSpots; i++) {
+            var d = document.createElement('i');
+            if (i < CONFIG.totalSpots - CONFIG.spotsLeft) d.className = 'on';
+            seats.appendChild(d);
+          }
+        }
+        bindTg(el);
+        feed.appendChild(el);
+        feed.scrollTop = feed.scrollHeight;
+      }
+
+      function run(i) {
+        if (i >= steps.length) { status.textContent = 'online'; return; }
+        var s = steps[i];
+        if (reduce) { render(s.id); return run(i + 1); }
+        var typing = null;
+        if (s.id !== 'm6') {
+          status.textContent = 'yozmoqda…';
+          typing = document.createElement('div');
+          typing.className = 'typing';
+          typing.setAttribute('aria-hidden', 'true');
+          typing.innerHTML = '<i></i><i></i><i></i>';
+          feed.appendChild(typing);
+          feed.scrollTop = feed.scrollHeight;
+        }
+        setTimeout(function () {
+          if (typing) typing.remove();
+          render(s.id);
+          setTimeout(function () { run(i + 1); }, 260);
+        }, s.type);
+      }
+      setTimeout(function () { run(0); }, 350);
+    })();
+  </script>
+</body>
+</html>
